@@ -20,11 +20,17 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: bahnschrift;
+    font-size: 32px;
 }
 
 a {
     color: white;
     text-decoration: none;
+}
+
+.IDname {
+    margin-left: 40px;
 }
 
 .dp_logo {
@@ -39,12 +45,17 @@ a {
     align-content: space-between;
     font-size: 24px;
     margin: 20px;
+    display: none;
 }
 
 .icons {
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+
+.hamburger {
+    display: none;
 }
 
 .me_logo {
@@ -268,11 +279,62 @@ img:hover {
 @media (max-width: 1000px){
     nav {
         box-sizing: border-box;
+        height: 100px;
+        display: flex;
+        justify-content: right;
+        align-items: flex-end;
     }
 
     /* .dp_logo {
         display: none;
     } */
+
+    .IDname {
+        display: none;
+    }
+
+    .about {
+        display: none;
+    }
+
+    .phone_version {
+        box-sizing: content-box;
+        height: 796px;
+        display: flex;
+        justify-content: baseline;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: url(./weed2.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+    }
+
+    .logomobile {
+        box-sizing: content-box;
+        align-self: center;
+    }
+
+    .slogan2 {
+        font-family: bahnschrift;
+        color: white;
+        font-size: 45px;
+        margin-left: 20px;
+    }
+
+    .slogan_description2 {
+        font-family: bahnschrift;
+        font-size: 24px;
+        color: gray;
+        margin-right: 100px;
+    }
+
+    .WUC {
+        font-family: bahnschrift;
+        font-size: 35px;
+        color: #F5FA00;
+        margin-top: 100px;
+    }
 
     .middle_box a {
         display: none;
@@ -282,27 +344,9 @@ img:hover {
         display: none;
     } 
 
-    .landing_weed {
-        height: 696px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        background: none;
-    }
-
-    .slogan {
-        font-size: 45px;
-        height: fit-content;
-        width: 380px;
-    }
-
-    .slogan_description {
-        width: 380px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .hamburger {
+        display: block;
+        margin-right: 21px;
     }
 
 
