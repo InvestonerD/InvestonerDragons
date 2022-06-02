@@ -121,7 +121,7 @@ a {
 }
 
 .au_wwa {
-    color: white;
+    color: #F5FA00;
     font-size: 60px;
 }
 
@@ -263,4 +263,56 @@ img:hover {
     100% {
         transform: translateX(calc(-350px * 29));
     }
+}
+
+@media (max-width: 1000px){
+    nav {
+        box-sizing: border-box;
+    }
+
+    /* .dp_logo {
+        display: none;
+    } */
+
+    .middle_box a {
+        display: none;
+    }
+
+    .icons {
+        display: none;
+    } 
+
+    .landing_weed {
+        height: 696px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background: none;
+    }
+
+    .slogan {
+        font-size: 45px;
+        height: fit-content;
+        width: 380px;
+    }
+
+    .slogan_description {
+        width: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* .about {
+        display: none;
+    }
+    .tokenomics {
+        display: none;
+    }
+    .slider {
+        display: none;
+    } */
 }
