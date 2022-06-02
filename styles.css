@@ -321,6 +321,7 @@ img:hover {
     .logomobile {
         box-sizing: content-box;
         align-self: center;
+        display: block;
     }
 
     .slogan2 {
