@@ -313,9 +313,9 @@ img:hover {
         align-content: center;
         align-items: center;
         flex-direction: column;
-        background-image: url(./weed2.png);
+        /* background-image: url(./weed2.png);
         background-repeat: no-repeat;
-        background-position: right bottom;
+        background-position: right bottom; */
     }
 
     .logomobile {
