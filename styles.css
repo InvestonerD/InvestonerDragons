@@ -310,15 +310,15 @@ img:hover {
 
     .phone_version {
         box-sizing: content-box;
-        height: 796px;
+        height: 816px;
         display: flex;
         justify-content: baseline;
         align-content: center;
         align-items: center;
         flex-direction: column;
-        /* background-image: url(./weed2.png);
+        background-image: url(./weed2.png);
         background-repeat: no-repeat;
-        background-position: right bottom; */
+        background-position: right bottom;
     }
 
     .logomobile {
@@ -334,17 +334,18 @@ img:hover {
     }
 
     .slogan3 {
+        width: 377.28px;
         font-family: bahnschrift;
         color: white;
         font-size: 45px;
-        margin-right: 90px;
     }
 
     .slogan_description2 {
+        width: 377.28px;
         font-family: bahnschrift;
         font-size: 24px;
         color: gray;
-        margin-right: 100px;
+        padding-left: 25px;
     }
 
     .WUC {
