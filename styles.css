@@ -338,14 +338,13 @@ img:hover {
         font-family: bahnschrift;
         color: white;
         font-size: 45px;
+        align-self: flex-end;
     }
 
     .slogan_description2 {
-        width: 377.28px;
         font-family: bahnschrift;
         font-size: 24px;
         color: gray;
-        padding-left: 25px;
     }
 
     .WUC {
@@ -378,4 +377,13 @@ img:hover {
     .slider {
         display: none;
     } */
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-350px * 29));
+        }
+    }
 }
