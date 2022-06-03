@@ -330,8 +330,15 @@ img:hover {
     .slogan2 {
         font-family: bahnschrift;
         color: white;
-        font-size: 46px;
+        font-size: 45px;
         margin-left: 20px;
+    }
+
+    .slogan3 {
+        font-family: bahnschrift;
+        color: white;
+        font-size: 45px;
+        margin-right: 70px;
     }
 
     .slogan_description2 {
