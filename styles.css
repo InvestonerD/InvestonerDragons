@@ -285,6 +285,10 @@ img:hover {
 }
 
 @media (max-width: 1000px){
+    * {
+        font-family: bahnschrift;
+    }
+
     nav {
         box-sizing: border-box;
         display: flex;
