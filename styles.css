@@ -79,21 +79,19 @@ a {
     justify-content: left;
     flex-direction: column;
     align-items: left;
-    padding-left: 300px;
     padding-top: 280px;
     cursor: default;
 }
 
 .SLOGANS {
-    width: fit-content;
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-right: 600px;
 }
 
 .slogan1 {
-    width: fit-content;
     font-family: bahnschrift;
     display: flex;
     align-items: center;
@@ -102,7 +100,6 @@ a {
 }
 
 .slogan2 {
-    width: fit-content;
     font-family: bahnschrift;
     display: flex;
     align-items: center;
@@ -111,7 +108,6 @@ a {
 }
 
 .slogan_description {
-    box-sizing: border-box;
     display: flex;
     font-family: bahnschrift;
     font-size: 30px;
