@@ -116,44 +116,47 @@ a {
 
 .about {
     box-sizing: border-box;
-    height: 910px;
+    height: 920px;
     display: flex;
-    align-items: center;
-    justify-items: space-between;
+    justify-content: center;
     font-family: bahnschrift;
-    margin-left: 100px;
-    gap: 100px;
-}
-
-.second_page {
-    display: flex;
-    flex-direction: column;
-    margin-right: 160px;
-}
-
-.au_image {
-    width: 800px;
-    height: 800px;
     background-image: url(./logo800.svg);
     background-repeat: no-repeat;
+    background-position-x: 50px;
+    background-position-y: 100px;
+    background-size: border-box;
+    justify-content: center;
+}
+
+.second_box {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 800px;
+    margin-right: 100px;
 }
 
 .au_wwa {
+    width: max-content;
     color: white;
     font-size: 60px;
 }
 
 .au_description {
-    width: 700px;
+    box-sizing: content-box;
     color: gray;
     font-size: 24px;
-    margin-left: 30px;
     margin-top: 16px;
+    margin-left: 100px;
+    margin-right: 100px;
+    align-self: center;
 }
 
 .learn_more {
-    width: 200px;
-    height: 50px;
+    box-sizing: border-box;
+    padding: 13px 52.15px;
     border-radius: 10px;
     margin-top: 12px;
     border: 0;
@@ -177,29 +180,26 @@ a {
 
 .tokenomics {
     box-sizing: border-box;
-    height: 910px;
+    height: 920px;
     display: flex;
     align-items: center;
     justify-items: space-between;
-    flex-direction: row-reverse;
+    flex-direction: row;
     font-family: bahnschrift;
     gap: 100px;
-}
-
-.token_img {
-    width: 800px;
-    height: 800px;
     background-image: url(./COIN0000.jpg);
-    background-position: center;
-    background-size: 1700px;
     background-repeat: no-repeat;
-    margin-right: 200px;
+    background-position-x: 350px;
+    background-position-y: -100px;
+    background-size: 1800px;
 }
 
 .token_box {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-right: 990px;
+    margin-left: 100px;
 }
 
 .blaze_title {
@@ -209,11 +209,10 @@ a {
 }
 
 .blaze_description {
-    width: 550px;
+    box-sizing: border-box;
     color: gray;
     font-size: 24px;
     margin-top: 16px;
-    margin-left: 30px;
 }
 
 .token_buy {
@@ -231,7 +230,8 @@ a {
     justify-content: center;
     cursor: pointer;
     color: #0A0A0B;
-    align-self: center;
+    align-self: flex-start;
+    margin-left: 60px;
 }
 
 .token_buy:hover {
