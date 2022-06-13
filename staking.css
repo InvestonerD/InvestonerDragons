@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: bahnschrift;
+}
+
+body {
+    background-color: #0A0A0B;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+    height: 80px;
+    color: white;
+    font-family: bahnschrift;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.dp_logo {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.phantom {
+    align-self: flex-end;
+}
+
+.phantom_connect {
+    width: 160px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #EDEAE5;
+    border: 0;
+    font-family: bahnschrift;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 3;
+}
+
+.phantom_connect:hover {
+    background-color: #0F0F0F;
+    color: #EDEAE5;
+}
+
+.middle_box {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    gap: 100px;
+}
+
+.merchandise_att {
+    color: #1D1D1D;
+}
+.team_att {
+    color: #1D1D1D;
+}
+.merchandise_att {
+    color: #1D1D1D;
+}
+.whitepaper_att {
+    color: #1D1D1D;
+}
+
+
+.merchandise_att:hover {
+    color: #EDEAE5;
+}
+.team_att:hover {
+    color: #EDEAE5;
+}
+.merchandise_att:hover {
+    color: #EDEAE5;
+}
+.whitepaper_att:hover {
+    color: #EDEAE5;
+}
+
+
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.me_logo {
+    margin-top: 12px;
+}
+
+.twitter_logo {
+    margin-top: 4px;
+}
+
+.discord_logo {
+    margin-top: 4px;
+}
+
+.staking_section {
+    box-sizing: border-box;
+    height: 920px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.staking_menu {
+    box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.staking_menu button {
+    border: none;
+    height: 60px;
+    color: #EDEAE5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: #0F0F0F;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.dashboard {
+    cursor: pointer;
+}
+.stake_dragons {
+    cursor: pointer;
+}
+.exchange_blaze {
+    cursor: pointer;
+}
+.withdrawal_history {
+    cursor: pointer;
+}
+
+.staking_title {
+    font-size: 80px;
+}
+
+.staking_menu_inside {
+    width: 661px;
+    height: 60px;
+    color: #EDEAE5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #0F0F0F;
+    border-radius: 30px;
+}
+
+.staking_zone {
+    width: 1400px;
+    height: 526px;
+    background-color: #0F0F0F;
+    border-radius: 30px;
+}
+
+.border_menu {
+    box-sizing: border-box;
+}
+
+.choose_dragons{
+    box-sizing: border-box;
+    height: 526px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.box1 {
+    width: 220px;
+    height: 406px;
+    background-color: #A911B6;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.rarity {
+    display: flex;
+    width: 214px;
+    height: 30px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.dragon_number {
+    display: flex;
+    background-color: #0F0F0F;
+    width: 214px;
+    height: 59px;
+    color: #EDEAE5;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 24px;
+    cursor: default;
+}
+
+.dragon_image {
+    width: 214px;
+    height: 214px;
+    background-image: url("./DM2.png");
+    background-color: #0F0F0F;
+}
+
+.blaze_card_menu {
+    display: flex;
+    width: 214px;
+    height: 58px;
+    flex-direction: row;
+    background-color: #0F0F0F;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    padding-top: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: #EDEAE5;
+    cursor: default;
+}
+
+.blaze_get_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3px;
+    width: 60px;
+    height: 30px;
+    background-color: #0F0F0F;
+    font-size: 20px;
+    border-radius: 30px;
+    border-color: #EDEAE5;
+    color: #EDEAE5;
+    cursor: pointer;
+}
+
+.blaze_get_button:hover {
+    color: #0A0A0B;
+    background-color: #EDEAE5;
+}
+
+.staking_situation {
+    display: flex;
+    width: 214px;
+    height: 50px;
+    background-image: url(./lock\ 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.staking_situation:hover {
+    color: #EDEAE5;
+}
