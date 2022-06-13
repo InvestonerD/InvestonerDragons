@@ -113,7 +113,7 @@ a {
 
 .staking_section {
     box-sizing: border-box;
-    height: 91.5vh;
+    height: 920px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,8 +121,7 @@ a {
 }
 
 .staking_menu {
-    width: 70vw;
-    border: 1px red solid;
+    box-sizing: border-box;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -161,7 +160,7 @@ a {
 }
 
 .staking_menu_inside {
-    width: 70vh;
+    width: 661px;
     height: 60px;
     color: #EDEAE5;
     display: flex;
@@ -172,7 +171,7 @@ a {
 }
 
 .staking_zone {
-    width: 70vw;
+    width: 1400px;
     height: 526px;
     background-color: #0F0F0F;
     border-radius: 30px;
