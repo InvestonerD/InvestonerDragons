@@ -122,7 +122,6 @@ a {
 
 .staking_menu {
     width: 70vw;
-    border: 1px red solid;
     height: 60px;
     display: flex;
     justify-content: space-between;
