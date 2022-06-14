@@ -298,3 +298,27 @@ a {
         transform: rotate(360deg);
     }
 }
+
+#box1::before{
+    background-color: #4E44CE;
+}
+
+#rarity1 {
+    color: #4E44CE;
+}
+
+#box2::before{
+    background-color: yellow;
+}
+
+#rarity2 {
+    color: yellow;
+}
+
+#box3::before{
+    background-color: gray;
+}
+
+#rarity3 {
+    color: gray;
+}
