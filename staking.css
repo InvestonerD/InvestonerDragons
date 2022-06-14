@@ -204,22 +204,31 @@ a {
     height: 22vw;
     border-radius: 15px;
     margin: 30px;
-    background-color: #A911B6;
+    background-color: #0F0F0F;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     transition: 0.1s;
+    overflow: hidden;
 }
 
-.choose_dragons .card:hover {
-    background-color: red;
+.choose_dragons .card::before {
+    content: '';
+    position: absolute;
+    width: 5vw;
+    height: 40vw;
+    background-color: #EDEAE5;
+    animation: animate 4s linear infinite;
 }
+
+
 
 .choose_dragons .card button{
     font-size: 1.2vw;
     background-color: transparent;
     border: 0;
     display: none;
+    align-self: flex-end;
     width: 5vw;
     height: 5vh;
     transition: 0.5s;
@@ -271,15 +280,21 @@ a {
     pointer-events: none;
 }
 
-.choose_dragons .card:hover .box {
-    transform: translateY(-50px);
-    transition: 0.5s;
-    box-shadow: 0 10px 40px red;
-}
-
 .choose_dragons .card .box .content a {
     color: #EDEAE5;
     display: inline-block;
     border-radius: 20px;
     font-size: 1vw;
+}
+
+
+@keyframes animate {
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
