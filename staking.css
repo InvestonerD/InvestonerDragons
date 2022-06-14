@@ -268,6 +268,7 @@ a {
     font-size: 1.5vw;
     color: #EDEAE5;
     transition: 0.5s;
+    pointer-events: none;
 }
 
 .choose_dragons .card:hover .box {
