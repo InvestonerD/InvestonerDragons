@@ -19,15 +19,21 @@ body::-webkit-scrollbar {
 
 nav {
     box-sizing: border-box;
-    max-width: calc(100% - 20px);
-    height: 80px;
+    width: 98vw;
+    height: 7vh;
     color: #EDEAE5;
     font-family: bahnschrift;
     display: flex;
     justify-content: space-between;
     align-content: space-between;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
     background-color: #0A0A0B;
+}
+
+.project_name {
+    display: none;
 }
 
 .phone_version {
@@ -40,7 +46,6 @@ nav {
 
 .dp_logo img {
     width: 4.205vw;
-    margin-left: 50px;
     margin-top: 50px;
 }
 
@@ -294,39 +299,14 @@ img:hover {
     }
 
     nav {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-    }
-
-    /* .dp_logo {
-        display: none;
-    } */
-
-    .IDname {
-        display: none;
-    }
-
-    .about {
-        display: none;
-    }
-
-    .tokenomics {
-        display: none;
-    }
-
-    .dp_logo {
-        display: none;
-    }
-
-    .landing_weed {
-        display: none;
+        margin-left: 0;
+        width: 100vw;
+        height: 7vh;
     }
 
     .phone_version {
-        box-sizing: content-box;
-        height: 816px;
+        width: 100vw;
+        height: 93.5vh;
         display: flex;
         justify-content: baseline;
         align-content: center;
@@ -334,11 +314,28 @@ img:hover {
         flex-direction: column;
         background-image: url(./weed2.png);
         background-repeat: no-repeat;
-        background-position: right bottom;
+        background-position: right 66vh;
     }
 
+    .project_name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70vw;
+        height: 5vw;
+        display: block;
+        font-size: 4.5vw;
+        align-self: center;
+        margin-left: 5vw;
+    }
+
+    .hamburger img{
+        margin-right: 5vw;
+        width: 10vw;
+    } 
+
     .logomobile {
-        box-sizing: content-box;
+        width: 100vw;
         align-self: center;
         display: block;
     }
@@ -346,26 +343,14 @@ img:hover {
     .slogan2 {
         font-family: bahnschrift;
         color: white;
-        font-size: 45px;
-    }
-
-    .slogan3 {
-        font-family: bahnschrift;
-        color: white;
-        font-size: 45px;
+        font-size: 11vw;
+        text-align: center;
     }
 
     .slogan_description2 {
         font-family: bahnschrift;
-        font-size: 24px;
+        font-size: 7vw;
         color: gray;
-    }
-
-    .WUC {
-        font-family: bahnschrift;
-        font-size: 35px;
-        color: #F5FA00;
-        margin-top: 100px;
     }
 
     .middle_box a {
@@ -378,25 +363,106 @@ img:hover {
 
     .hamburger {
         display: block;
-        margin-right: 21px;
     }
 
-    /* .about {
-        display: none;
-    }
-    .tokenomics {
-        display: none;
-    }
-    .slider {
-        display: none;
-    } */
+        .slider {
+            height: 50vh;
+        }
 
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        .IDname {
+            display: none;
         }
-        100% {
-            transform: translateX(calc(-350px * 29));
+
+        .about {
+        width: 100vw;
+        height: 100vh;
+        background-image: none;
+        }
+
+    .second_box {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: baseline;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .au_wwa {
+        font-size: 10vw;
+    }
+
+    .au_description {
+        width: 80vw;
+        height: 40vh;
+        font-size: 5.5vw;
+    }
+
+    .learn_more {
+        width: 50vw;
+        height: 15vw;
+        margin-top: 5vw;
+        font-size: 7vw;
+    }
+
+        .tokenomics {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            display: flex;
+            flex-direction: column;
+            background-position: -23vw 50vh;
+            background-size: 140vw;
+        }
+
+        .token_box {
+            margin-top: 15vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 10vw;
+        }
+
+        .blaze_title {
+            width: 100vw;
+            font-size: 9vw;
+            align-self: center;
+            text-align: center;
+        }
+
+        .blaze_description {
+            width: 80vw;
+            font-size: 5.5vw;
+            height: 40vh;
+            margin-bottom: 65vw;
+        }
+
+        .token_buy {
+            width: 50vw;
+            height: 15vw;
+            font-size: 7vw;
+        }
+
+        .dp_logo {
+            display: none;
+        }
+
+        .landing_weed {
+            display: none;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-350px * 29));
+            }
         }
     }
-}
