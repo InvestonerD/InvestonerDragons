@@ -415,6 +415,7 @@ img:hover {
             flex-direction: column;
             background-position: -23vw 50vh;
             background-size: 140vw;
+            border: 1px red solid;
         }
 
         .token_box {
@@ -426,7 +427,7 @@ img:hover {
             height: 100vh;
             margin-right: 0;
             margin-left: 0;
-            margin-bottom: 10vw;
+            margin-bottom: 15vw;
         }
 
         .blaze_title {
@@ -440,7 +441,7 @@ img:hover {
             width: 80vw;
             font-size: 5.5vw;
             height: 40vh;
-            margin-bottom: 80vw;
+            margin-bottom: 65vw;
         }
 
         .token_buy {
