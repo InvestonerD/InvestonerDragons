@@ -415,7 +415,6 @@ img:hover {
             flex-direction: column;
             background-position: -23vw 50vh;
             background-size: 140vw;
-            border: 1px red solid;
         }
 
         .token_box {
