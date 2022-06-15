@@ -30,6 +30,11 @@ a {
     text-decoration: none;
 }
 
+@font-face {
+    font-family: bahnschrift;
+    src: url(./bahnschrift.ttf);
+}
+
 .dp_logo img {
     width: 4.205vw;
     margin-left: 50px;

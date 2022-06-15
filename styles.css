@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: bahnschrift;
+    src: url(./bahnschrift.ttf);
+}
+
 body {
     background-color: #0A0A0B;
 }
