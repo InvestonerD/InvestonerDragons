@@ -173,12 +173,17 @@ a {
     width: 6vw;
     text-align: center;
     cursor: pointer;
-    color: #000000;
+    color: #EDEAE5;
 }
 
 .staking_menu_inside .start, a:nth-child(1):hover ~ .animation_menu {
     width: 7vw;
     margin-left: .5vw;
+    transition: .5s;
+}
+
+.staking_menu_inside a:nth-child(1):hover{
+    color: #000000;
     transition: .5s;
 }
 
@@ -235,25 +240,28 @@ a {
     margin-left: 29.4vw;
 }
 
+.staking_menu_inside a:nth-child(3){
+    color: #0A0A0B;
+    width: 8vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.staking_menu_inside a:nth-child(3):hover{
+    color: #000000;
+    transition: .5s;
+}
+
+.staking_menu_inside .start, a:nth-child(3):hover ~ .animation_menu {
+    width: 9.5vw;
+    margin-left: 18.6vw;
+}
+
 .staking_zone {
     width: 70vw;
     height: 28vw;
     background-color: #0F0F0F;
     border-radius: 30px;
-}
-
-.staking_menu_inside a:nth-child(1){
-    margin-left: 1vw;
-    width: 6vw;
-    text-align: center;
-    cursor: pointer;
-    color: #000000;
-}
-
-.staking_menu_inside .start, a:nth-child(1):hover ~ .animation_menu {
-    width: 7vw;
-    margin-left: .5vw;
-    transition: .5s;
 }
 
 .border_menu {
@@ -264,7 +272,7 @@ a {
     width: 70vw;
     height: 28vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-content: center;
     align-items: center;
     padding: 30px;
@@ -272,8 +280,8 @@ a {
 
 .choose_dragons .card {
     position: relative;
-    width: 15vw;
-    height: 22vw;
+    width: 25vw;
+    height: 25vw;
     border-radius: 15px;
     margin: 30px;
     background-color: #0F0F0F;
@@ -288,8 +296,8 @@ a {
     content: '';
     position: absolute;
     width: 5vw;
-    height: 55vh;
-    background-color: #EDEAE5;
+    height: 100vh;
+    background-color: transparent;
     animation: animate 4s linear infinite;
 }
 
@@ -341,7 +349,9 @@ a {
     justify-content: space-between;
 }
 
+
 .choose_dragons .card .box .content img {
+    margin-top: .7vw;
     width: 14vw;
 }
 
@@ -350,22 +360,36 @@ a {
     color: #EDEAE5;
     transition: 0.5s;
     pointer-events: none;
+    cursor: default;
 }
 
 .choose_dragons .card .box .content h3 {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     color: #EDEAE5;
     transition: 0.5s;
     pointer-events: none;
+    cursor: default;
 }
 
 .choose_dragons .card .box .content a {
     color: #EDEAE5;
-    display: inline-block;
-    border-radius: 20px;
+    background-color: #0A0A0B;
+    width: 7vw;
+    height: 2.5vw;
+    margin-top: 1vw;
+    align-self: center;
+    padding-top: .65vw;
+    display: block;
+    border-radius: 15px;
     font-size: 1vw;
+    transition: .35s;
 }
 
+.choose_dragons .card .box .content a:hover {
+    background-color: #EDEAE5;
+    color: #0A0A0B;
+    transition: .35s;
+}
 
 @keyframes animate {
     0%
@@ -379,25 +403,172 @@ a {
 }
 
 #box1::before{
-    background-color: #4E44CE;
+    background-color: #64FF41;
 }
 
 #rarity1 {
-    color: #4E44CE;
+    color: #64FF41;
 }
 
-#box2::before{
-    background-color: yellow;
+/* #box2::before{
+    /* background-color: #EDEAE5; 
+} */
+
+#box2 {
+    width: 40vw;
+    height: 15vw;
+}
+
+#box2 .content {
+    width: 30vw;
+}
+
+#box2 .content .calculator_menu {
+    box-sizing: border-box;
+    height: 5vw;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box2 .content .calculator_menu input {
+    width: 12vw;
+    height: 2vw;
+    background-color: #0A0A0B;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#box2 .content .calculator_menu input:focus {
+    color: #EDEAE5;
+    font-size: 1vw;
+}
+
+#box2 .content .calculator_menu input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#box2 .content .calculator_menu .first_column {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1vw;
+    gap: 4vw;
+    color: #EDEAE5;
+}
+
+#box2 .content .calculator_menu .first_column .convertion_result {
+    width: 12vw;
+    height: 2vw;
+    background-color: #0A0A0B;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1vw;
+}
+
+#box2 .content .calculator_menu .first_column .convertion_result .currency {
+    margin-left: 1vw;
+    color: #64FF41;
+    cursor: default;
+}
+
+#box2 .content .calculator_menu .first_column .convertion_result .usd_amount {
+    margin-right: 4vw;
+    cursor: default;
+}
+
+#box2 .content .calculator_menu .first_column .blaze_amount, select textarea {
+    color: #EDEAE5;
+    font-size: 1vw;
+}
+
+
+#box2 .content .calculator_menu .second_column .convert {
+    color: #EDEAE5;
+    background-color: #0A0A0B;
+    width: 5.8vw;
+    height: 2.1vw;
+    display: block;
+    border-radius: 15px;
+    font-size: 1vw;
+    transition: .35s;
+}
+
+#box2 .content .calculator_menu .second_column .convert:hover {
+    color: #0A0A0B;
+    background-color: #EDEAE5;
+    transition: .35s;
 }
 
 #rarity2 {
     color: yellow;
 }
 
-#box3::before{
-    background-color: gray;
+#box3 {
+    width: 40vw;
+    height: 8vw;
+}
+
+#box3 .content {
+    display: flex;
+    flex-direction: row;
+    width: 36vw;
 }
 
 #rarity3 {
-    color: gray;
+    font-size: 1.35vw;
+    color: #64FF41;
+}
+
+.content3 {
+    width: 37vw;
+    height: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    align-items: center;
+}
+
+.content3 .progress {
+    width: 25vw;
+    height: 1.5vw;
+    background: #EDEAE5;
+    border-radius: .25vw;
+    overflow: hidden;
+}
+
+.quantity {
+    position: absolute;
+    font-size: 1vw;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 1.5vw;
+    align-self: center;
+}
+
+.progress .progress_bar {
+    display: block;
+    height: 100%;
+    width: 1%;
+    background: linear-gradient(90deg, #25960B 15%, #2FFF00 30%, #25960B 45%, #2FFF00 60%, #25960B 75%, #2FFF00 90%, #25960B 100%);
+    text-align: center;
+    background-size: 50vw 10vw;
+    animation: progress-animation 2s linear infinite;
+}
+
+@keyframes progress-animation {
+    0% {
+        background-position: 100%;
+    }
+    100%{
+        background-position: 0%;
+    }
 }

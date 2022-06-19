@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investoner Dragons</title>
-    <link rel="stylesheet" href="./staking.css">
+    <link rel="stylesheet" href="./$BLAZE-pre-sale.css">
     <link href="./bahnschrift.ttf">
     <link rel="icon" href="./logo.svg">
     <script src="./phantom.js"></script>
-    <script src="./staking.js"></script>
+    <script src="./blaze.js"></script>
 </head>
 
     <body>
@@ -20,7 +20,7 @@
                     <div class="middle_box">
                         <a href="#" class="merchandise_att">Merchandise</a>
                         <a href="#" class="team_att">Team</a>
-                        <a href="#" class="staking_att">Staking</a>
+                        <a href="./staking.html" class="staking_att">Staking</a>
                         <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank" class="whitepaper_att">WhitePaper</a>
                     </div>
                     <div class="phantom">
@@ -32,11 +32,11 @@
         <div class="staking_section">
             <div class="border_menu">
                 <div class="staking_menu">
-                    <span class="staking_title">STAKING</span>
+                    <span class="staking_title">$BLAZE</span>
                     <div class="staking_menu_inside">
-                        <a class="dashboard">Dashboard</a>
+                        <a class="dashboard" href="./staking.html">Dashboard</a>
                         <a class="stake_dragons">Stake Dragons</a>
-                        <a href="./$Blaze-Pre-Sale.html" class="exchange_blaze">$BLAZE Pre-Sale</a>
+                        <a class="exchange_blaze">$BLAZE Pre-Sale</a>
                         <a class="withdrawal_history">Withdrawal History</a>
                         <div class="animation_menu start"></div>
                     </div>
@@ -47,36 +47,47 @@
                         <div class="card" id="box1">
                             <div class="box">
                                 <div class="content">
-                                    <h2 id="rarity1">Epic</h2>
-                                    <h3>Dragon #5,420</h3>
-                                    <img class="dragon_image" src="./DM2.png">
+                                    <h2 id="rarity1">Pre-Sale</h2>
+                                    <img class="dragon_image" src="./$BLAZE.png">
                                     <a href="#">GET $BLAZE</a>
                                 </div>
                             </div>
-                            <button class="status">LOCKED</button>
                         </div>
+                    <div>
                         <div class="card" id="box2">
                             <div class="box">
                                 <div class="content">
-                                    <h2 id="rarity2">Legendary</h2>
-                                    <h3>Dragon #5,420</h3>
-                                    <img class="dragon_image" src="./D2.png">
-                                    <a href="#">GET $BLAZE</a>
+                                    <h2 id="rarity1">Calculator</h2>
+                                    <h3>$0.50 USD = 1 $BLAZE</h3>
+                                    <div class="calculator_menu">
+                                        <div class="first_column">
+                                            <input class="blaze_amount" placeholder="Amount of $BLAZE" type="number" min="1" max="9" id="input"></input>
+                                            <div class="convertion_result">
+                                                <span class="currency">USD</span>
+                                                <span class="usd_amount" id="convertion_usd"></span>
+                                            </div>
+                                        </div>
+                                        <div class="second_column">
+                                            <button class="convert"" onclick="getValue()">CONVERT</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <button class="status">LOCKED</button>
                         </div>
                         <div class="card" id="box3">
                             <div class="box">
-                                <div class="content">
-                                    <h2 id="rarity3">Common</h2>
-                                    <h3>Dragon #5,420</h3>
-                                    <img class="dragon_image" src="./DM3.png">
-                                    <a href="#">GET $BLAZE</a>
+                                <div class="content3">
+                                    <h4 id="rarity3">PRE-SALE FUNDS:</h4>
+                                    <div class="progress">
+                                        <span class="quantity">$37 USD</span>
+                                        <span class="progress_bar"></span>
+                                    </div>
+                                    </div>
                                 </div>
                             </div>
-                            <button class="status">LOCKED</button>
                         </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
