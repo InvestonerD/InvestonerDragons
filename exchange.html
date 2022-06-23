@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investoner Dragons</title>
+    <link rel="stylesheet" href="./exchange.css">
+    <link href="./bahnschrift.ttf">
+    <link rel="icon" href="./logo.svg">
+    <script src="./exchange.js"></script>
+    <script src="./phantom.js"></script>
+</head>
+
+    <body>
+
+        <header>
+            <nav>
+                    <a href="./index.html" class="dp_logo"><img src="./ID-LOGO.png"></a>
+                    <div class="middle_box">
+                        <a href="#" class="merchandise_att">Merchandise</a>
+                        <a href="#" class="team_att">Team</a>
+                        <a href="./staking.html" class="staking_att">Staking</a>
+                        <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank" class="whitepaper_att">WhitePaper</a>
+                    </div>
+                    <div class="phantom">
+                        <button class="phantom_connect" onclick="getAccount()">Select Wallet</button>
+                    </div>
+            </nav>
+        </header>
+
+        <div class="staking_section">
+            <div class="border_menu">
+                <div class="staking_menu">
+                    <span class="staking_title">SWAP</span>
+                    <div class="staking_menu_inside">
+                        <a class="dashboard" href="./staking.html">Dashboard</a>
+                        <a class="stake_dragons">Stake Dragons</a>
+                        <a class="exchange_blaze" href="./$Blaze-Pre-Sale.html">$BLAZE Pre-Sale</a>
+                        <a class="withdrawal_history">Exchange</a>
+                        <div class="animation_menu start"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="staking_zone">
+                <div class="choose_dragons">
+                    <div class="card" id="box1">
+                        <div class="box">
+                            <div class="content">
+                                <div class="top_box">
+                                    <span>Exchange</span>
+                                </div>
+                                <div class="exchange_menu">
+                                    <div class="first_selection">
+                                        <div class="currency_one">
+                                        <div class="dropdown">
+                                            <div class="select">
+                                                <span class="selected"><img src="./logo.svg">BLAZE</span>
+                                                <div class="caret"></div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="currencies">
+                                            <div class="c_value">
+                                                <span class="symbols">~ $</span>
+                                                <span class="currency_value" id="usd_value">0</span>
+                                            </div>
+                                            <input class="currency_amount" placeholder=0 type="number" min="1" max="9" id="input" onkeyup="getValue()"></input>
+                                        </div>
+                                    </div>
+                                    <div class="middle_box_rounded">
+                                        <div class="rounded_sides1"></div>
+                                        <div class="between_side"></div>
+                                        <img src="./arrow1.png">
+                                        <div class="rounded_sides2"></div>
+                                    </div>
+                                    <div class="second_selection">
+                                        <div class="currency_two">
+                                        <div class="dropdown" onclick="drop()">
+                                            <div class="select">
+                                                <span class="selected"><img src="./Solana_logo.png">SOLANA</span>
+                                                <div class="caret"></div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="currencies">
+                                            <div class="c_value">
+                                                <span class="symbols">~ $</span>
+                                                <span class="currency_value" id="usd_value1">0</span>
+                                            </div>
+                                            <span class="currency_amount" id="total_amount">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button onclick="notyet()">Swap Now!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="popup">
+            <div class="close_icon"></div>
+                <div class="inside_popup">
+                    <span class="not">Can't swap tokens</span>
+                    <span>Wallet not connected</span>
+                </div> -->
+        </div>
+
+    </body>
+
+</html>
