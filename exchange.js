@@ -42,5 +42,5 @@ function getValue() {
 };
 
 function notyet() {
-    alert("Smart Contract it's gonna be implemented before mint");
+    alert("Smart Contract it's gonna be implemented after $BLAZE pre-sale");
 }
