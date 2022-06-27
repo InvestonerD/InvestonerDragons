@@ -23,4 +23,3 @@ function disconnectAccount()
   window.solana.request({ method: "disconnect" });
   window.solana.on("disconnect", () => console.log("disconnected!"));
 };
-
