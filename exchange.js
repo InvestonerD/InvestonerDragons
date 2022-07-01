@@ -30,17 +30,10 @@ options.forEach(option => {
 });
 };
 
-var SOLANA = document.getElementById('SOLANA');
-var USDT = document.getElementById('USDT');
-
 function getValue() {
     var currency = document.querySelector('input').value;
     document.getElementById("usd_value").innerHTML = currency.toString() / 2;
     document.getElementById("usd_value1").innerHTML = currency.toString() / 2;
-    var total = parseFloat(currency / 34).toFixed(2);
+    var total = parseFloat(currency / 33).toFixed(2) / 2;
     const last = document.getElementById('total_amount').innerHTML = total;
 };
-
-function notyet() {
-    alert("Smart Contract it's gonna be implemented after $BLAZE pre-sale");
-}
