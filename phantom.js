@@ -2,6 +2,10 @@ const isPhantomInstalled = window.solana && window.solana.isPhantom
 const http = require('http');
 const express = require('express');
 const app = new express();
+const splToken = require('@solana/spl-token');
+const { TOKEN_PROGRAM_ID } = require('@solana/spl-token');
+const {Keypair, Transaction, SystemProgram, LAMPORTS_PER_SOL} = require('@solana/web3.js');
+const { Connection, GetProgramAccountsFilter,} = require('@solana/web3.js');
 
 var fs = require('fs');
 
@@ -36,9 +40,9 @@ function signInTransactionAndSendMoney(destPubkeyStr,lamports){
 
   (async() => {
 
-      const network = "https://api.mainnet.solana.com";
-const connection = new solanaWeb3.Connection(network);
-const transaction = new solanaWeb3.Transaction();
+      const network = "https://api.mainnet-beta.solana.com";
+      const connection = new solanaWeb3.Connection(network);
+      const transaction = new solanaWeb3.Transaction();
 
 lamports = document.getElementById("quantity").value * lamports_per_sol;
 
