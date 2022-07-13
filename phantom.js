@@ -63,11 +63,11 @@ function signInTransactionAndSendMoney(destPubkeyStr,lamports){
       const connection = new solanaWeb3.Connection(network);
       const transaction = new solanaWeb3.Transaction();
 
-lamports = total * lamports_per_sol;
+      lamports = document.getElementById('sol_price').innerHTML * lamports_per_sol;
 
 try {
   destPubkeyStr = "BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg"
-  lamports = total * lamports_per_sol;
+  lamports = document.getElementById('sol_price').innerHTML * lamports_per_sol;
 
   console.log("starting sendMoney");
   const destPubkey = new solanaWeb3.PublicKey(destPubkeyStr);
