@@ -1,3 +1,5 @@
+
+
 const isPhantomInstalled = window.solana && window.solana.isPhantom
 const http = require('http');
 const express = require('express');
@@ -6,6 +8,24 @@ const splToken = require('@solana/spl-token');
 const { TOKEN_PROGRAM_ID } = require('@solana/spl-token');
 const {Keypair, Transaction, SystemProgram, LAMPORTS_PER_SOL} = require('@solana/web3.js');
 const { Connection, GetProgramAccountsFilter,} = require('@solana/web3.js');
+
+
+
+
+
+
+function getValue() {
+  let currency = document.getElementById('quantity').value.toString();
+  let total = parseFloat(currency * .30).toFixed(2);
+  const last = document.getElementById('sol_price').innerHTML = total;
+};
+
+
+
+
+
+
+
 
 var fs = require('fs');
 
@@ -39,16 +59,15 @@ const getProvider = () => {
 function signInTransactionAndSendMoney(destPubkeyStr,lamports){
 
   (async() => {
-
       const network = "https://api.mainnet-beta.solana.com";
       const connection = new solanaWeb3.Connection(network);
       const transaction = new solanaWeb3.Transaction();
 
-lamports = document.getElementById("quantity").value * lamports_per_sol;
+lamports = total * lamports_per_sol;
 
 try {
-  destPubkeyStr = "BPKRJPAAAnboZGmga4nTFBpXsiywhCXWAGfUTbvkm8qZ"
-  lamports = document.getElementById("quantity").value * lamports_per_sol;
+  destPubkeyStr = "BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg"
+  lamports = total * lamports_per_sol;
 
   console.log("starting sendMoney");
   const destPubkey = new solanaWeb3.PublicKey(destPubkeyStr);

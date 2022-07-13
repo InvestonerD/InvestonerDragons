@@ -2479,15 +2479,34 @@ class Transaction {
 
     if (!opts) {
       return;
-    } else if (Object.prototype.hasOwnProperty.call(opts, 'lastValidBlockHeight')) {
-      const newOpts = opts;
-      Object.assign(this, newOpts);
-      this.recentBlockhash = newOpts.blockhash;
-      this.lastValidBlockHeight = newOpts.lastValidBlockHeight;
+    }
+
+    if (opts.feePayer) {
+      this.feePayer = opts.feePayer;
+    }
+
+    if (opts.signatures) {
+      this.signatures = opts.signatures;
+    }
+
+    if (Object.prototype.hasOwnProperty.call(opts, 'lastValidBlockHeight')) {
+      const {
+        blockhash,
+        lastValidBlockHeight
+      } = opts;
+      this.recentBlockhash = blockhash;
+      this.lastValidBlockHeight = lastValidBlockHeight;
     } else {
-      const oldOpts = opts;
-      Object.assign(this, oldOpts);
-      this.recentBlockhash = oldOpts.recentBlockhash;
+      const {
+        recentBlockhash,
+        nonceInfo
+      } = opts;
+
+      if (nonceInfo) {
+        this.nonceInfo = nonceInfo;
+      }
+
+      this.recentBlockhash = recentBlockhash;
     }
   }
   /**
@@ -6164,16 +6183,6 @@ class Connection {
         reject(err);
       }
     });
-
-    const checkBlockHeight = async () => {
-      try {
-        const blockHeight = await this.getBlockHeight(commitment);
-        return blockHeight;
-      } catch (_e) {
-        return -1;
-      }
-    };
-
     const expiryPromise = new Promise(resolve => {
       if (typeof strategy === 'string') {
         let timeoutMs = this._confirmTransactionInitialTimeout || 60 * 1000;
@@ -6196,6 +6205,15 @@ class Connection {
         }), timeoutMs);
       } else {
         let config = strategy;
+
+        const checkBlockHeight = async () => {
+          try {
+            const blockHeight = await this.getBlockHeight(commitment);
+            return blockHeight;
+          } catch (_e) {
+            return -1;
+          }
+        };
 
         (async () => {
           let currentBlockHeight = await checkBlockHeight();
@@ -6560,9 +6578,7 @@ class Connection {
 
 
   async getRecentPerformanceSamples(limit) {
-    const args = this._buildArgs(limit ? [limit] : []);
-
-    const unsafeRes = await this._rpcRequest('getRecentPerformanceSamples', args);
+    const unsafeRes = await this._rpcRequest('getRecentPerformanceSamples', limit ? [limit] : []);
     const res = superstruct.create(unsafeRes, GetRecentPerformanceSamplesRpcResult);
 
     if ('error' in res) {
@@ -30141,7 +30157,6 @@ function _default(address, options) {
   return new WebSocketBrowserImpl(address, options);
 }
 },{"@babel/runtime/helpers/classCallCheck":8,"@babel/runtime/helpers/createClass":9,"@babel/runtime/helpers/getPrototypeOf":10,"@babel/runtime/helpers/inherits":11,"@babel/runtime/helpers/interopRequireDefault":12,"@babel/runtime/helpers/possibleConstructorReturn":13,"eventemitter3":42}],65:[function(require,module,exports){
-/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
 var Buffer = buffer.Buffer
@@ -30163,8 +30178,6 @@ if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow)
 function SafeBuffer (arg, encodingOrOffset, length) {
   return Buffer(arg, encodingOrOffset, length)
 }
-
-SafeBuffer.prototype = Object.create(Buffer.prototype)
 
 // Copy static methods from Buffer
 copyProps(Buffer, SafeBuffer)

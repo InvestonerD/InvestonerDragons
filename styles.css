@@ -123,18 +123,18 @@ nav {
 
 .nft_zone {
     width: 100vw;
-    height: 30vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     cursor: default;
 }
 
 .nft_showup {
     width: 60%;
-    height: 80%;
+    height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .ntf_card {
@@ -149,6 +149,55 @@ nav {
     font-family: bahnschrift;
     font-size: 2.5vw;
     font-weight: 600;
+}
+
+.tickets {
+    position: inherit;
+    z-index: 100;
+    width: 15%;
+    height: 8%;
+    border-radius: 10px;
+    border: 1px #0A0A0B solid;
+    background-color: #4E44CE;
+    color: #EDEAE5;
+    cursor: pointer;
+    top: 87%;
+    left: 24%;
+}
+
+.sign_in {
+    position: inherit;
+    z-index: 100;
+    width: 15%;
+    height: 8%;
+    border-radius: 10px;
+    border: 1px #0A0A0B solid;
+    background-color: #4E44CE;
+    color: #EDEAE5;
+    cursor: pointer;
+    top: 87%;
+    left: 4%;
+}
+
+.quantity {
+    position: inherit;
+    z-index: 100;
+    width: 15%;
+    height: 8%;
+    border-radius: 10px;
+    border: 0;
+    background-color: gray;
+    color: #EDEAE5;
+    cursor: pointer;
+    top: 78.5%;
+    left: 24%;
+    text-align: center;
+    background-color: #0F0F0F;
+}
+
+.quantity::-webkit-outer-spin-button, .quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .first_line {
