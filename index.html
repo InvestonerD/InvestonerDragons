@@ -11,250 +11,429 @@
     <script src="./phantom.js"></script>
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
     <script src="./solanaWeb3.browser.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-    <body>
+<body>
+    <div class="phone-nav">
+        <i class='bx bxs-chevrons-right' id="s_phone"></i>
+        <span>Investoner Dragons</span>
+        <i class='bx bxs-user-circle' id="b_phone"></i>
+    </div>
 
+    <nav class="sidebar close phone">
         <header>
-            <nav>
-                <div class="project_name">INVESTONER DRAGONS</div>
-                <a href="#" class="dp_logo"><img src="./ID-LOGO.png"></a>
-                <div class="middle_box">
-                    <a href="#">Merchandise</a>
-                    <a href="#">Team</a>
-                    <a href="./staking.html">Staking</a>
-                    <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank">WhitePaper</a>
-                </div>
-                <div class="icons">
-                    <a href="https://discord.gg/YrNezfJKke" target="_blank" class="discord_logo"><img src="./icon-discord-60.png"></a>
-                    <a href="https://twitter.com/InvstonerDragon" target="_blank" class="twitter_logo"><img src="./icon-twitter-60.png"></a>
-                    <a href="https://magiceden.io" target="_blank" class="me_logo"><img src="./icon-me-60.png"></a>
-                </div>
-                    <a class="hamburger"><img src="./HM.svg"></a>
-            </nav>
+            <div class="image-text">
+                    <div class="image">
+                        <img src="/ID-LOGO2.png" class="logo">
+                        <i class='bx bxs-no-entry' id="bo_menu"></i>
+                    </div>
+
+                    <div class="text header-text">
+                        <span class="name">Investoner Dragons</span>
+                        <span class="profession">Welcome</span>
+                    </div>
+            </div>
+
+            <i class='bx bxs-chevrons-left toggle'></i>
         </header>
 
-        <div class="phone_version">
-            <img class="logomobile" src="./256logo.svg">
-            <div class="slogan2">Better than stoner, be an Investoner</div>
-            <div class="slogan_description2">High quality cannabis</div>
-        </div>
 
-
-        <div class="landing_weed">
-            <div class="SLOGANS">
-                <div class="slogan1">Better than stoner,</div>
-                <div class="slogan2">be an Investoner.</div>
-                <div class="slogan_description">High quality recreational cannabis</div>
+        <div class="user-profile">
+            <div class="user_image">
+                <img src="./logo800.svg">
+            </div>
+            <div class="username">
+                <span></span>
             </div>
         </div>
 
-        <div class="nft_zone">
-            <div class="nft_showup">
-                <div class="ntf_card">
-                    <script>
-                        var wallet;
-                        const lamports_per_sol = solanaWeb3.LAMPORTS_PER_SOL;
-                        function connectWallet() {
-                            (async() => {
-                                try {
-                                    const resp = await window.solana.connect();
-                                    wallet = resp;
-                                } catch (err) {}
-                            })();
-                            window.solana.on("connect", () => 
-                            document.getElementById("status").innerText="Connected")
-                        }
-                    </script>
-                    <input placeholder="Enter Ticket Amount" class="quantity" id="quantity" onkeyup="getValue()" type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                    <button class="tickets" onclick="signInTransactionAndSendMoney('BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg', 10)">Buy Tickets</button>
-                    <button class="sign_in" onclick="connectWallet()"><span id="status">Connect Wallet</span></button>
-                    <div class="first_line">
-                    <span class="dragon_name">Investoner Dragon #420</span>
-                    <div class="owner_line">
-                        <span class="owner">Owned By:</span>
-                        <span class="name">ChrisDev</span>
-                    </div>
-                    </div>
 
-                    <div class="second_line">
-                        <div class="price">
-                            <div class="price_one">
-                                <img src="./solanaLogoMark.png">
-                                <span class="sol_price" id="sol_price">0.30</span>
-                            </div>
-                            <span>Cost per Tickets</span>
+        <div class="menu-bar">
+            <div class="menu">
+                <div class="menu-links">
+                    <li class="nav-link">
+                        <a href="#dashboard">
+                            <i class='bx bxs-dashboard icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#staking">
+                            <i class='bx bxs-lock-alt icon' ></i>
+                            <span class="text nav-text">Staking</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="casino">
+                            <i class='bx bx-color icon'></i>
+                            <span class="text nav-text">Casino</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#auction">
+                            <i class='bx bxs-coupon icon'></i>
+                            <span class="text nav-text">Auction</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-dollar-circle icon'></i>
+                            <span class="text nav-text">Exchange</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-hot icon'></i>
+                            <span class="text nav-text">$BLAZE</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+
+
+            <div class="bottom-menu expand">
+                <div class="user_balance">
+                    <div class="blaze">
+                        <img src="./Solana_logo.png">
+                        <span class="b_amount" id="blaze-amount"></span>
+                    </div>
+                    <div class="wallet_address">
+                        <span class="wa">Wallet Address:</span>
+                        <span class="add" id="wallet-address"></span>
+                    </div>
+                </div>
+                <script>
+                        (async() => {
+                            try {
+                                const resp = await window.solana.connect();
+                                wallet = resp;
+                            } catch (err) {}
+                        })();
+                </script>
+                <li class="nav-link connect" onclick="phantom_connect()">
+                    <i class='bx bxs-wallet icon'></i>
+                    <span class="text nav-text">Connect Wallet</span>
+                </li>
+                <li class="nav-link disconnect" onclick="disconnectAccount()">
+                    <i class='bx bx-log-out icon' ></i>
+                    <span class="text nav-text">Disconnect</span>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="center-zone">
+
+        <div class="landing-start">
+            <div class="landing_zone">
+                <div class="left-landing">
+                    <span>Don't Panic,</span>
+                    <span>It's Organic.</span>
+                    <span class="subtitle">Real Passive Income Backed by IRL Dispensaries</span>
+                    <div class="media-buttons">
+                        <a href="https://magiceden.io/drops/investonerdragons?tab=allDrops" target="_blank">Get Investoner Dragons</a>
+                        <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank">White Paper</a>
+                    </div>
+                </div>
+                <div class="right-landing">
+                        <img src="./smokey.png" class="floater">
+                        <img src="./shadow.png" class="shadow">
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-center" id="dashboard">
+            <div class="dashboard">
+                <div class="first-row">
+                    <div class="casino-income">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="payout-amount">
+                        <div class="payout-title">
+                            <span class="pay-1">Next payout:</span>
+                            <span class="time_span" id="demo"></span>
+                            <script>
+                                // Set the date we're counting down to
+                                var countDownDate = new Date("July 27, 2022 24:00:00").getTime();
+                                
+                                // Update the count down every 1 second
+                                var x = setInterval(function() {
+                                
+                                  // Get today's date and time
+                                var now = new Date().getTime();
+                                
+                                  // Find the distance between now and the count down date
+                                var distance = countDownDate - now;
+                                
+                                  // Time calculations for days, hours, minutes and seconds
+                                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                
+                                  // Display the result in the element with id="demo"
+                                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                                + minutes + "m " + seconds + "s ";
+                                
+                                  // If the count down is finished, write some text
+                                if (distance < 0) {
+                                    clearInterval(x);
+                                    document.getElementById("demo").innerHTML = "EXPIRED";
+                                }
+                                }, 1000);
+                            </script>
                         </div>
-                        <div class="time_remaining">
-                            <div class="time_one">
-                                <span class="time_span" id="demo"></span>
-                                <script>
-                                    // Set the date we're counting down to
-                                    var countDownDate = new Date("July 23, 2022 24:00:00").getTime();
-                                    
-                                    // Update the count down every 1 second
-                                    var x = setInterval(function() {
-                                    
-                                      // Get today's date and time
-                                    var now = new Date().getTime();
-                                    
-                                      // Find the distance between now and the count down date
-                                    var distance = countDownDate - now;
-                                    
-                                      // Time calculations for days, hours, minutes and seconds
-                                      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                                    
-                                      // Display the result in the element with id="demo"
-                                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                                    + minutes + "m " + seconds + "s ";
-                                    
-                                      // If the count down is finished, write some text
-                                    if (distance < 0) {
-                                        clearInterval(x);
-                                        document.getElementById("demo").innerHTML = "EXPIRED";
-                                    }
-                                    }, 1000);
-                                    </script>
+                        <div class="payout-content">
+                            <div class="pay-top">
+                                <span class="pay-amount">0.246</span>
+                                <span class="pay-2">$SOL</span>
                             </div>
-                            <span>Remaining Time</span>
+                            <div class="pay-bottom">
+                                <span class="pay-3">per dragon</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <img src="./1out1.png">
+                <div class="second-row">
+                    <div class="dispensaries-income">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <div class="payout-amount">
+                        <div class="payout-title">
+                            <span class="pay-1">Liquidity Pool</span>
+                        </div>
+                        <div class="payout-content">
+                            <div class="pay-top">
+                                <span class="pay-amount">$84,289</span>
+                                <span class="pay-2">USD</span>
+                            </div>
+                            <div class="pay-bottom">
+                                <span class="pay-3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="balances phone">
+                <div class="total-balance">
+                    <div class="phone_balance_icon">
+                        <i class='bx bxs-no-entry' id="bo_phone"></i>
+                    </div>
+                    <div class="tb-title">
+                        <span>Total balance</span>
+                    </div>
+                    <div class="tb_content">
+                        <span class="tb_amount">$267,820.00</span>
+                        <div class="loss-gain-indicator">
+                            <div>
+                                <span>+17.59%</span>
+                            </div>
+                            <i class='bx bxs-right-top-arrow-circle'></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-items">
+                    <div class="mi-title">
+                        <span>My holdings</span>
+                    </div>
+                    <div class="mi-content">
+                        <div class="investment-zone">
+                            <div class="inv-left">
+                                <i class='bx bxs-down-arrow-circle' ></i>
+                                <div class="inv-right">
+                                    <span class="inv-title">Investment</span>
+                                    <span class="inv-amount">$220,710</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profit-zone">
+                            <div class="inv-left">
+                                <i class='bx bxs-right-top-arrow-circle' ></i>
+                                <div class="inv-right">
+                                    <span class="inv-title">Profit</span>
+                                    <span class="inv-amount">$47,110</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-dragons">
+                    <span>My dragons</span>
+                    <div class="dragons-zone">
+                        <div class="column">
+                            <img src="d1.png" class="card-dragon">
+                            <img src="d222.png" class="card-dragon">
+                            <img src="d3.png" class="card-dragon">
+                        </div>
+                        <div class="column" class="card-dragon">
+                            <img src="d4.png" class="card-dragon">
+                            <img src="d5.png" class="card-dragon">
+                            <img src="d6.png" class="card-dragon">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="about">
-            <div class="second_box">
-                <div class="au_wwa">About the project</div>
-                <div class="au_description"><span>The project is focused on creating a legally established company in the US aimed at the planting, 
-                            sale and distribution of cannabis for both medicinal and recreational use. 
-                            <br><br> To make this happen we will incubate 5,555 stoner dragons that can be acquired by investors to become an Investoner.</span></div>
-                <a class="learn_more" href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank">Read More</a>
+        <div class="staking" id="staking">
+            <div class="staking_center_zone">
+                <div class="staking_dragons">
+                    <span class="staking-titles">First Nest</span>
+                    <div class="dragon_row_one">
+                        <div class="dragon_card">
+                            <div class="blaze">
+                                <span>$BLAZE</span>
+                                <span>25 / 120</span>
+                            </div>
+                            <img src="/red_zombie_lava.png">
+                            <div class="staking-buttons">
+                                <button>Withdraw</button>
+                                <button>Collect</button>
+                            </div>
+                        </div>
+                        <div class="dragon_card">
+                            <div class="blaze">
+                                <span>$BLAZE</span>
+                                <span>785 / 3,000</span>
+                            </div>
+                            <img src="/Lava_Dragon.png" alt="">
+                            <div class="staking-buttons">
+                                <button class="locked">Locked</button>
+                                <button>Collect</button>
+                            </div>
+                        </div>
+                        <div class="dragon_card">
+                            <div class="blaze">
+                                <span>$BLAZE</span>
+                                <span>785 / 3,000</span>
+                            </div>
+                            <img src="/snoop2.png" alt="">
+                            <div class="staking-buttons">
+                                <button class="locked">Locked</button>
+                                <button>Collect</button>
+                            </div>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                    </div>
+                    <span class="staking-titles">Second Nest</span>
+                    <div class="dragon_row_two">
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                        <div class="dragon_card">
+                            <i class='bx bx-plus-circle' ></i>
+                        </div>
+                    </div>
+                </div>
+                <div class=""></div>
             </div>
         </div>
 
-        <div class="tokenomics">
-            <div class="token_box">
-                <div class="blaze_title">The power of <strong>$BLAZE</strong></div>
-                <div class="blaze_description">Our main currency $BLAZE will allow you to purchase "The Investoner Dragons" products. <br><br> From branded merchandise to cannabis store products such as flower, vapes, edibles, prerolls, tinctures, accesories and more! <br><br> You can exchange $BLAZE for $SOLANA too.</div>
-                <a class="token_buy" id="buy_button" href="https://birdeye.so/token/5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF" target="_blank">Buy $BLAZE</a>
+        <div class="auction" id="auction">
+            <div class="left-auction">
+                <span class="time_span" id="demo2"></span>
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("July 23, 2022 24:00:00").getTime();
+                    
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+                    
+                      // Get today's date and time
+                    var now = new Date().getTime();
+                    
+                      // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+                    
+                      // Time calculations for days, hours, minutes and seconds
+                      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                      // Display the result in the element with id="demo"
+                    document.getElementById("demo2").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                    
+                      // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo2").innerHTML = "EXPIRED";
+                    }
+                    }, 1000);
+                </script>
+                <img src="./1out1.png"> 
             </div>
+            <div class="right-auction">
+                <div class="nft-general">
+                    <span class="title1">Investoner Dragons</span>
+                    <span class="title2">WEED 4 LIFE DRAGON 3/5</span>
+                    <div class="cost-zone">
+                        <div class="cost">
+                            <div class="cost-SOL">
+                                <span>0.30</span>
+                                <span>SOL</span>
+                            </div>
+                            <span>$10.00 USD</span>
+                        </div>
+                    </div>
+                    <span class="description">This Dragon will give you access to a lot of utilities such as:</span>
+                    <ul>
+                        <li>3,000 $BLAZE monthly</li>
+                        <li>Certain amount of cannabis monthly</li>
+                        <li>Get dispensaries revenue from the core team income</li>
+                        <li class="so_on">And so on...</li>
+                    </ul>
+                </div>
+                <div class="highest-ticket-user">
+                        <div class="ticket-description">
+                            <span>Remaining Tickets</span>
+                        </div>
+                        <div class="ticket-left">
+                            <span>79 / 100</span>
+                        </div>
+                </div>
+                <div class="tickets-chart">
+                    <div class="inside-chart">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                    <div class="right-chart">
+                        <span class="get-some">GET SOME TICKETS</span>
+                        <div class="total">
+                            <span>$</span>
+                            <span id="sol_price" class="sol_price">0.30</span>
+                            <span>SOL</span>
+                        </div>
+                        <input placeholder="Enter Ticket Amount" class="quantity" id="quantity" onkeyup="getValue()" type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+                        <button onclick="signInTransactionAndSendMoney('BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg', 10)">Buy Tickets</button>
+                    </div>
+                </div>
+                <div class=""></div>
+            </div>
+        </div>
+    </div>
 
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="/new.js"></script>
 
-        <div class="slider">
-            <div class="slide_track">
-                <div class="slide">
-                    <img src="./rel images/Red Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Blue Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Purple Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/1out1.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Gray Dragon.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/snoop.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Red Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Blue Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Purple Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/1out1.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Gray Dragon.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/snoop.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Red Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Blue Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Purple Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/1out1.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Gray Dragon.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/snoop.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Red Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Blue Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Purple Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/1out1.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Gray Dragon.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/snoop.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Red Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Blue Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/Purple Dragon.png">
-                </div>
-                
-                <div class="slide">
-                    <img src="./rel images/1out1.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/Gray Dragon.png">
-                </div>
-                <div class="slide">
-                    <img src="./rel images/snoop.png">
-                </div>
-        </div>
-        </div>
-    </body>
+</body>
 
 </html>
