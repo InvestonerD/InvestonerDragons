@@ -12,6 +12,7 @@ phone_balanceoff = document.querySelector("#bo_phone");
 phone_menuoff = document.querySelector("#bo_menu");
 phone_menu = document.querySelector("#s_phone");
 balances = document.querySelector(".balances");
+active = document.querySelector(".active")
 
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");

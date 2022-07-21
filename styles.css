@@ -125,6 +125,7 @@ body::-webkit-scrollbar {
 
 .sidebar.close .user_image img {
     width: 5vw;
+    height: 5vw;
 }
 
 .sidebar.close .user_balance {
@@ -1372,8 +1373,6 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 };
-
-
 
 @media (max-width: 799px) {
 
