@@ -157,7 +157,7 @@ const myChart3 = new Chart(lol, {
         datasets: [
             {
                 label: "Dispensaries Revenue",
-                data: [9, 8, 3, 2, 1,79],
+                data: [8, 8, 3, 2, 1,78],
                 backgroundColor: ["#44CE6B", "#CEC044", "#7844CE", "#CE4444", "#CE7644","#474747"],
                 borderWidth: 1,
             },
