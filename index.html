@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body>
+<body onload="timer(), timer2()">
     <div class="phone-nav">
         <i class='bx bxs-chevrons-right' id="s_phone"></i>
         <span>Investoner Dragons</span>
@@ -24,15 +25,15 @@
     <nav class="sidebar close phone">
         <header>
             <div class="image-text">
-                    <div class="image">
-                        <img src="/ID-LOGO2.png" class="logo">
-                        <i class='bx bxs-no-entry' id="bo_menu"></i>
-                    </div>
+                <div class="image">
+                    <img src="/ID-LOGO2.png" class="logo">
+                    <i class='bx bxs-no-entry' id="bo_menu"></i>
+                </div>
 
-                    <div class="text header-text">
-                        <span class="name">Investoner Dragons</span>
-                        <span class="profession">Welcome</span>
-                    </div>
+                <div class="text header-text">
+                    <span class="name">Investoner Dragons</span>
+                    <span class="profession">Welcome</span>
+                </div>
             </div>
 
             <i class='bx bxs-chevrons-left toggle'></i>
@@ -54,13 +55,13 @@
                 <div class="menu-links">
                     <li class="nav-link">
                         <a href="#dashboard">
-                            <i class='bx bxs-dashboard icon' ></i>
+                            <i class='bx bxs-dashboard icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#staking">
-                            <i class='bx bxs-lock-alt icon' ></i>
+                            <i class='bx bxs-lock-alt icon'></i>
                             <span class="text nav-text">Staking</span>
                         </a>
                     </li>
@@ -83,9 +84,9 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bxs-hot icon'></i>
-                            <span class="text nav-text">$BLAZE</span>
+                        <a href="#information">
+                            <i class='bx bxs-info-circle icon'></i>
+                            <span class="text nav-text">Information</span>
                         </a>
                     </li>
                 </div>
@@ -104,19 +105,19 @@
                     </div>
                 </div>
                 <script>
-                        (async() => {
-                            try {
-                                const resp = await window.solana.connect();
-                                wallet = resp;
-                            } catch (err) {}
-                        })();
+                    (async () => {
+                        try {
+                            const resp = await window.solana.connect();
+                            wallet = resp;
+                        } catch (err) { }
+                    })();
                 </script>
                 <li class="nav-link connect" onclick="phantom_connect()">
                     <i class='bx bxs-wallet icon'></i>
                     <span class="text nav-text">Connect Wallet</span>
                 </li>
                 <li class="nav-link disconnect" onclick="disconnectAccount()">
-                    <i class='bx bx-log-out icon' ></i>
+                    <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Disconnect</span>
                 </li>
             </div>
@@ -132,13 +133,15 @@
                     <span>It's Organic.</span>
                     <span class="subtitle">Real Passive Income Backed by IRL Dispensaries</span>
                     <div class="media-buttons">
-                        <a href="https://magiceden.io/drops/investonerdragons?tab=allDrops" target="_blank">Get Investoner Dragons</a>
-                        <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank">White Paper</a>
+                        <a href="https://magiceden.io/drops/investonerdragons?tab=allDrops" target="_blank">Get
+                            Investoner Dragons</a>
+                        <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/" target="_blank">White
+                            Paper</a>
                     </div>
                 </div>
                 <div class="right-landing">
-                        <img src="./smokey.png" class="floater">
-                        <img src="./shadow.png" class="shadow">
+                    <img src="./smokey.png" class="floater">
+                    <img src="./shadow.png" class="shadow">
                 </div>
             </div>
         </div>
@@ -156,37 +159,37 @@
                             <script>
                                 // Set the date we're counting down to
                                 var countDownDate = new Date("July 27, 2022 24:00:00").getTime();
-                                
+
                                 // Update the count down every 1 second
-                                var x = setInterval(function() {
-                                
-                                  // Get today's date and time
-                                var now = new Date().getTime();
-                                
-                                  // Find the distance between now and the count down date
-                                var distance = countDownDate - now;
-                                
-                                  // Time calculations for days, hours, minutes and seconds
-                                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                                
-                                  // Display the result in the element with id="demo"
-                                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                                + minutes + "m " + seconds + "s ";
-                                
-                                  // If the count down is finished, write some text
-                                if (distance < 0) {
-                                    clearInterval(x);
-                                    document.getElementById("demo").innerHTML = "EXPIRED";
-                                }
+                                var x = setInterval(function () {
+
+                                    // Get today's date and time
+                                    var now = new Date().getTime();
+
+                                    // Find the distance between now and the count down date
+                                    var distance = countDownDate - now;
+
+                                    // Time calculations for days, hours, minutes and seconds
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                    // Display the result in the element with id="demo"
+                                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                                        + minutes + "m " + seconds + "s ";
+
+                                    // If the count down is finished, write some text
+                                    if (distance < 0) {
+                                        clearInterval(x);
+                                        document.getElementById("demo").innerHTML = "EXPIRED";
+                                    }
                                 }, 1000);
                             </script>
                         </div>
                         <div class="payout-content">
                             <div class="pay-top">
-                                <span class="pay-amount">0.246</span>
+                                <span class="pay-amount">1.55</span>
                                 <span class="pay-2">$SOL</span>
                             </div>
                             <div class="pay-bottom">
@@ -242,7 +245,7 @@
                     <div class="mi-content">
                         <div class="investment-zone">
                             <div class="inv-left">
-                                <i class='bx bxs-down-arrow-circle' ></i>
+                                <i class='bx bxs-down-arrow-circle'></i>
                                 <div class="inv-right">
                                     <span class="inv-title">Investment</span>
                                     <span class="inv-amount">$220,710</span>
@@ -251,7 +254,7 @@
                         </div>
                         <div class="profit-zone">
                             <div class="inv-left">
-                                <i class='bx bxs-right-top-arrow-circle' ></i>
+                                <i class='bx bxs-right-top-arrow-circle'></i>
                                 <div class="inv-right">
                                     <span class="inv-title">Profit</span>
                                     <span class="inv-amount">$47,110</span>
@@ -318,28 +321,28 @@
                             </div>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                     </div>
                     <span class="staking-titles">Second Nest</span>
                     <div class="dragon_row_two">
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                         <div class="dragon_card">
-                            <i class='bx bx-plus-circle' ></i>
+                            <i class='bx bx-plus-circle'></i>
                         </div>
                     </div>
                 </div>
@@ -353,34 +356,34 @@
                 <script>
                     // Set the date we're counting down to
                     var countDownDate = new Date("July 22, 2022 24:00:00").getTime();
-                    
+
                     // Update the count down every 1 second
-                    var x = setInterval(function() {
-                    
-                      // Get today's date and time
-                    var now = new Date().getTime();
-                    
-                      // Find the distance between now and the count down date
-                    var distance = countDownDate - now;
-                    
-                      // Time calculations for days, hours, minutes and seconds
-                      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    
-                      // Display the result in the element with id="demo"
-                    document.getElementById("demo2").innerHTML = days + "d " + hours + "h "
-                    + minutes + "m " + seconds + "s ";
-                    
-                      // If the count down is finished, write some text
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo2").innerHTML = "EXPIRED";
-                    }
+                    var x = setInterval(function () {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        // Display the result in the element with id="demo"
+                        document.getElementById("demo2").innerHTML = days + "d " + hours + "h "
+                            + minutes + "m " + seconds + "s ";
+
+                        // If the count down is finished, write some text
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("demo2").innerHTML = "EXPIRED";
+                        }
                     }, 1000);
                 </script>
-                <img src="./1out1.png"> 
+                <img src="./1out1.png">
             </div>
             <div class="right-auction">
                 <div class="nft-general">
@@ -404,26 +407,16 @@
                     </ul>
                 </div>
                 <div class="highest-ticket-user">
-                        <div class="ticket-description">
-                            <span>Remaining Tickets</span>
-                        </div>
-                        <div class="ticket-left">
-                            <span>78 / 100</span>
-                        </div>
+                    <div class="ticket-description">
+                        <span>Tickets Sold</span>
+                    </div>
+                    <div class="ticket-left">
+                        <span>28</span>
+                    </div>
                 </div>
                 <div class="tickets-chart">
                     <div class="inside-chart">
                         <canvas id="myChart3"></canvas>
-                    </div>
-                    <div class="right-chart">
-                        <span class="get-some">GET SOME TICKETS</span>
-                        <div class="total">
-                            <span>$</span>
-                            <span id="sol_price" class="sol_price">0.30</span>
-                            <span>SOL</span>
-                        </div>
-                        <input placeholder="Enter Ticket Amount" class="quantity" id="quantity" onkeyup="getValue()" type="number" min="1" step="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
-                        <button onclick="signInTransactionAndSendMoney('BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg', 10)">Buy Tickets</button>
                     </div>
                 </div>
                 <div class=""></div>
@@ -431,6 +424,253 @@
         </div>
 
         <div class="information" id="information">
+            <div class="info-zone">
+                <div class="info-split">
+                    <div class="info-4">
+                        <div class="info-content">
+                            <div class="content">
+                                <div class="info-title">
+                                    <span>What are we creating?</span>
+                                </div>
+                                <div class="info"><span>The main objective of this project is to <strong>expand</strong>
+                                        very quickly and the
+                                        growth of our own cannabis dispensaries IRL, this in order to have a product and
+                                        a
+                                        tokenomics that give passive income to our <strong>Investoner Dragons</strong>
+                                        (Holders)</span>
+                                </div>
+                            </div>
+                            <div class="info-illustration">
+                                <img src="./plants.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-4">
+                        <div class="info-content">
+                            <div class="content">
+                                <div class="info-title">
+                                    <span>How much money do we need?</span>
+                                </div>
+                                <div class="info"><span>To achieve all our goals it is not necessary that we sell the
+                                        entire collection, we can start each and every one of them with
+                                        <strong>60%</strong> of the total
+                                        funds.</span>
+                                </div>
+                            </div>
+                            <div class="info-illustration">
+                                <img src="./board.svg" id="board">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-split">
+                    <div class="info-4">
+                        <div class="info-content">
+                            <div class="content" id="third-column">
+                                <div class="info-title">
+                                    <span>Who we are?</span>
+                                </div>
+                                <div class="info" id="weare"><span>We are a <strong>C-Corp</strong> legally established
+                                        in Delaware under the name
+                                        "Investoner Dragons, Inc." We have all our paperwork in order and we use
+                                        <strong>Stripe Atlas</strong> as our legal provider.
+                                        Our C-Corp has a digitized bank account provided by <strong>Mercury
+                                            Bank</strong>.</span>
+                                </div>
+                            </div>
+                            <div class="info-illustration">
+                                <a class="Stripe" href="https://stripe.com/atlas" target="_blank"><img
+                                        src="./mercury.png"></a>
+                                <a class="Mercury" href="https://mercury.com/web3" target="_blank"><img
+                                        src="./stripe.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-4">
+                        <div class="info-content">
+                            <div class="content" id="third-column">
+                                <div class="info-title">
+                                    <span>How do holders make money?</span>
+                                </div>
+                                <div class="info" id="weare">
+                                    <span>
+                                        There are several ways to get income having a dragon, mainly
+                                        <strong>$BLAZE</strong> mining, with our currency you can do things such as:
+                                    </span>
+                                    <ul>
+                                        <li><strong>Real Estate Investment (Crowdfunding):</strong></li>
+                                        <span>A section to use $BLAZE as an investment tool, we will present real estate
+                                            projects to the holders and they will decide which construction to fund, at
+                                            the end of the construction the holders will receive dividends proportional
+                                            to their investment.</span>
+                                        <li><strong>$BLAZE for Cannabis:</strong></li>
+                                        <span>Exchange your $BLAZE for some grams at our dispensaries, monthly box and home delivery service.</span>
+                                        <li><strong>Gambling at Casino:</strong></li>
+                                        <span>We are developing our own Crypto Casino powered by $BLAZE, holders get 2.5% of every withdraw by non-holders.</span>
+                                        <li><strong>Renting our Real Estate:</strong></li>
+                                        <span>We have the great advantage of being legally established and this allows us to buy, sell and rent real estate, with the assets that we acquire, the rents will go directly to the Liquidity Pool.</span>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info-illustration">
+                                <div class="cards-container">
+                                    <div class="blaze-cards">
+                                        <div class="cards-content">
+                                            <div class="cards-title">
+                                                <span>Real Estate Crowdfunding</span>
+                                            </div>
+                                            <div class="cards-illustration">
+                                                <img src="./crowdfunding.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="blaze-cards">
+                                        <div class="cards-content">
+                                            <div class="cards-title">
+                                                <span>$BLAZE for Cannabis</span>
+                                            </div>
+                                            <div class="cards-illustration" id="box">
+                                                <img src="./box.png" class="box">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cards-container">
+                                    <div class="blaze-cards">
+                                        <div class="cards-content">
+                                            <div class="cards-title">
+                                                <span>Gambling at Casino</span>
+                                            </div>
+                                            <div class="cards-illustration">
+                                                <img src="./cards.png">
+                                            </div>
+                                        </div>
+                                        <div class="cards-info">
+                                        </div>
+                                    </div>
+                                    <div class="blaze-cards">
+                                        <div class="cards-content">
+                                            <div class="cards-title">
+                                                <span>Renting our Real Estate</span>
+                                            </div>
+                                            <div class="cards-illustration">
+                                                <img src="./rent.png" id="rent">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-4">
+                        <div class="info-content">
+                            <div class="content" id="revenue-zone">
+                                <div class="info-title">
+                                    <span>When are we gonna get revenue?</span>
+                                </div>
+                                <div class="info" id="revenue">
+                                <ul>
+                                    <li><strong>Weekly</strong></li>
+                                    <span>This method applies for Casino.</span>
+                                    <li><strong>Monthly</strong></li>
+                                    <span>This method applies for Dispensaries and Crowdfunding.</span>
+                                </ul>
+                                </div>
+                            </div>
+                            <div class="info-illustration">
+                                <div class="timer-cards">
+                                    <div class="timer-first-row">
+                                        <span>Next <span class="week">Weekly</span> Payout:</span>
+                                        <span class="timer" id="payout1""></span>
+                                        <script>
+                                            function timer() {
+                                            // Set the date we're counting down to
+                                            var countDownDate = new Date("July 27, 2022 12:00:00").getTime();
+                        
+                                            // Update the count down every 1 second
+                                            var x = setInterval(function () {
+                        
+                                                // Get today's date and time
+                                                var now = new Date().getTime();
+                        
+                                                // Find the distance between now and the count down date
+                                                var distance = countDownDate - now;
+                        
+                                                // Time calculations for days, hours, minutes and seconds
+                                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        
+                                                // Display the result in the element with id="demo"
+                                                document.getElementById("payout1").innerHTML = days + "d " + hours + "h "
+                                                    + minutes + "m " + seconds + "s ";
+                        
+                                                // If the count down is finished, write some text
+                                                if (distance < 0) {
+                                                    clearInterval(x);
+                                                    document.getElementById("payout1").innerHTML = "EXPIRED";
+                                                }
+                                            }, 1000);
+                                        }
+                                        </script>
+                                    </div>
+                                    <div class="timer-second-row">
+                                        <img src="./Solana_logo.png">
+                                        <span>1.55</span>
+                                        <span>/ Dragon</span>
+                                    </div>
+                                    <div class="collect"><button>Collect Now</button></div>
+                                </div>
+                                <div class="timer-cards">
+                                    <div class="timer-first-row">
+                                        <span>Next <span class="month">Monthly</span> Payout:</span>
+                                        <span class="timer" id="payout2"></span>
+                                        <script>
+                                            function timer2() {
+                                            // Set the date we're counting down to
+                                            var countDownDate = new Date("July 29, 2022 12:00:00").getTime();
+                        
+                                            // Update the count down every 1 second
+                                            var x = setInterval(function () {
+                        
+                                                // Get today's date and time
+                                                var now = new Date().getTime();
+                        
+                                                // Find the distance between now and the count down date
+                                                var distance = countDownDate - now;
+                        
+                                                // Time calculations for days, hours, minutes and seconds
+                                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        
+                                                // Display the result in the element with id="demo"
+                                                document.getElementById("payout2").innerHTML = days + "d " + hours + "h "
+                                                    + minutes + "m " + seconds + "s ";
+                        
+                                                // If the count down is finished, write some text
+                                                if (distance < 0) {
+                                                    clearInterval(x);
+                                                    document.getElementById("payout2").innerHTML = "EXPIRED";
+                                                }
+                                            }, 1000);
+                                        }
+                                        </script>
+                                    </div>
+                                    <div class="timer-second-row">
+                                        <img src="./Solana_logo.png">
+                                        <span>6.23</span>
+                                        <span>/ Dragon</span>
+                                    </div>
+                                    <div class="collect"><button id="yellow">Collect Now</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

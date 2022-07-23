@@ -154,12 +154,12 @@ const lol = document.getElementById("myChart3").getContext("2d");
 const myChart3 = new Chart(lol, {
     type: "doughnut",
     data: {
-        labels: ["User", "miningsmith.eth", "User",  "User", "User","Remaining"],
+        labels: ["miningsmith.eth", "User", "User",  "User", "User"],
         datasets: [
             {
                 label: "Dispensaries Revenue",
-                data: [8, 8, 3, 2, 1,78],
-                backgroundColor: ["#44CE6B", "#CEC044", "#7844CE", "#CE4444", "#CE7644","#474747"],
+                data: [12, 8, 5, 2, 1],
+                backgroundColor: ["#44CE6B", "#CEC044", "#7844CE", "#CE4444", "#CE7644"],
                 borderWidth: 1,
             },
         ],
