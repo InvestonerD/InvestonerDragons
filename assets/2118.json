@@ -1,0 +1,30 @@
+{
+  "name": "Investoner Dragon #2118",
+  "symbol": "TID",
+  "description": "2,500 Dragons funding their own brand of cannabis, dispensaries and casino throughout the United States and Canada",
+  "seller_fee_basis_points": 300,
+  "image": "2118.png",
+  "external_url": "https://investonerdragons.com",
+  "edition": 2118,
+  "attributes": [
+    {
+      "trait_type": "REVEAL",
+      "value": "649"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "2118.png",
+        "type": "image/png"
+      }
+    ],
+    "category": "image",
+    "creators": [
+      {
+        "address": "BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg",
+        "share": 100
+      }
+    ]
+  }
+}
