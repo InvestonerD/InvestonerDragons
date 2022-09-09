@@ -91,7 +91,7 @@ function phantom_connect() {
 
 
 
-                    let wallets = ["BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg", "HEvWoVdJZVTstJuitWZ21sVzDciyZvtT4cwpuA36RsdW", "2VyQvE983ScpTBCxQEmM2oupuNs9QA6WR5aHguqMCKFE", "6JEXqhJHpqeffNeQ9cdURMjaHkHmCygwxEShuY4ntdgb", "24Ds7b3DpMxg26owuxgBHNecHPFpGeSbpmKPp15E16WM"];
+                    let wallets = ["BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg", "HEvWoVdJZVTstJuitWZ21sVzDciyZvtT4cwpuA36RsdW", "2VyQvE983ScpTBCxQEmM2oupuNs9QA6WR5aHguqMCKFE", "6JEXqhJHpqeffNeQ9cdURMjaHkHmCygwxEShuY4ntdgb", "24Ds7b3DpMxg26owuxgBHNecHPFpGeSbpmKPp15E16WM", "EWWbnDoPosMCbNp8m9ikLjWmgnYxLcGsnHjsMaVz7qwk"];
                     for (var i = 0; i < wallets.length; i++){
                         // look for the entry with a matching `code` value
                         if (wallets[i] == phantom.publicKey){
@@ -211,6 +211,27 @@ function phantom_connect() {
                                             user_balance.classList.toggle("expand");
                                             user_nickname.innerHTML = "King6";
                                         }
+
+                                        else if (phantom && phantom.publicKey == wallets[5]) {
+                                            const tokenAccount = new solanaWeb3.PublicKey(
+                                                "CxJdbPQpQKTyV6Lsmy7sCepoRTesKHA9qQi6PX4ecBWf"
+                                                );
+                                                let tokenAmount = await connection.getTokenAccountBalance(tokenAccount);
+                                                console.log(`amount: ${tokenAmount.value.amount}`);
+                                                
+                                                const balance = await connection.getBalance(phantom.publicKey);
+                                                let total = balance / 1000000000;
+                                                
+                                                document.getElementById("blaze-amount").innerHTML = parseInt(tokenAmount.value.amount).toLocaleString('en-US', {minimumFractionDigits: 0}) + " $BLAZE";
+                                                slider.oninput = function() {
+                                                    profit.innerHTML = parseInt(this.value * 1.15).toLocaleString('en-US', {minimumFractionDigits: 0});;
+                                                    output.innerHTML = parseInt(this.value).toLocaleString('en-US', {minimumFractionDigits: 0});;
+                                                }
+                                                security.classList.toggle("active");
+                                                verify_process.classList.toggle("on");
+                                                user_balance.classList.toggle("expand");
+                                                user_nickname.innerHTML = "Kev1493";
+                                            }
                         }
                     }
             })();
