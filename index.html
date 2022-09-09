@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investoner Dragons</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="./bahnschrift.ttf">
+    <link rel="icon" href="./logo.svg">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="./phantom.js"></script>
+    <script type="module" src="./spl.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script src="./solanaWeb3.browser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<body>
+
+
+    <div class="security active">
+
+        <nav class="sidebar close phone">
+            <header>
+                <div class="image-text">
+                    <div class="image">
+                        <img src="/ID-LOGO2.png" class="logo">
+                        <i class='bx bxs-no-entry' id="bo_menu"></i>
+                    </div>
+
+                    <div class="text header-text">
+                        <span class="name">Investoner Dragons</span>
+                        <span class="profession">Welcome</span>
+                    </div>
+                </div>
+
+                <i class='bx bxs-chevrons-left toggle'></i>
+            </header>
+
+
+            <div class="user-profile">
+                <div class="user_image chris">
+                    <img src="./logo800.svg">
+                    <img src="./Chris1.png">
+                </div>
+                <div class="username">
+                    <span class="user-nickname" id="name"></span>
+                </div>
+            </div>
+
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <div class="menu-links">
+                        <li class="nav-link">
+                            <a href="#dashboard" onclick="document.getElementById('dashboard').scrollIntoView();">
+                                <i class='bx bxs-dashboard icon'></i>
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="https://the-investoner-dragons-inc.floppylabs.io" target="_blank">
+                                <i class='bx bx-lock-alt icon'></i>
+                                <span class="text nav-text">Staking</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a class="casino">
+                                <i class='bx bx-color icon'></i>
+                                <span class="text nav-text">Casino</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#roadmap" onclick="document.getElementById('roadmap').scrollIntoView();">
+                                <i class='bx bx-task icon'></i>
+                                <span class="text nav-text">Road Map</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="https://app.strataprotocol.com/swap/3J358F8u94c6VB4vz9fT3AwpbWEZh7A4yddinTvoaqeb?cluster=mainnet-beta"
+                                target="_blank">
+                                <i class='bx bx-dollar-circle icon'></i>
+                                <span class="text nav-text">Exchange</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#ax-info" onclick="document.getElementById('ax-info').scrollIntoView();">
+                                <i class='bx bx-buildings icon'></i>
+                                <span class="text nav-text">Axol Towers</span>
+                            </a>
+                        </li>
+                    </div>
+                </div>
+
+
+                <div class="bottom-menu expand">
+                    <div class="user_balance">
+                        <div class="blaze">
+                            <img src="./BLAZE-COIN.png">
+                            <span class="b_amount" id="blaze-amount"></span>
+                        </div>
+                        <div class="wallet_address">
+                            <span class="wa">Wallet Address:</span>
+                            <span class="add" id="wallet-address"></span>
+                        </div>
+                    </div>
+
+
+                    <li class="nav-link connect" onclick="phantom_connect()">
+                        <i class='bx bxs-wallet icon'></i>
+                        <span class="text nav-text">Connect Wallet</span>
+                    </li>
+                    <li class="nav-link disconnect" onclick="disconnectAccount()">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Disconnect</span>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        <div class="center-zone">
+
+            <div class="landing-start">
+                <div class="landing_zone">
+                    <div class="left-landing">
+                        <span>Don't Panic,</span>
+                        <span>It's Organic.</span>
+                        <span class="subtitle">Real Passive Income Backed by IRL Businesses</span>
+                        <div class="media-buttons">
+                            <a href="https://magiceden.io/marketplace/investonerdragons" target="_blank">Get
+                                Investoner Dragons</a>
+                            <a href="https://chris-61.gitbook.io/the-investoner-dragons-whitepaper/"
+                                target="_blank">White
+                                Paper</a>
+                        </div>
+                    </div>
+                    <div class="right-landing">
+                        <img src="./smokey.png" class="floater">
+                        <img src="./shadow.png" class="shadow">
+                    </div>
+                </div>
+            </div>
+
+            <div class="landing">
+                <div class="left-landing-zone">
+                    <div class="title-left-landing">
+                        <span><strong>Investing</strong> through <strong>Web3</strong> has never been so
+                            <strong>easy</strong>.</span>
+                    </div>
+                    <div class="bottom-left-landing">
+                        <button onClick="document.getElementById('ax-info').scrollIntoView();">Invest Now!</button>
+                    </div>
+                </div>
+                <div class="mid-landing-zone">
+                    <img src="/Logo.png" class="axol-logo">
+                    <div class="img-explanation">
+                        <div class="info">
+                            <div class="info-amount"><span>+270 Investors</span></div>
+                            <div class="bottom-info">
+                                <div class="bottom-inner">
+                                    <i class='bx bxs-heart'></i>
+                                    <span>138</span>
+                                </div>
+                                <span>(+150 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="users">
+                            <div class="goal">
+                                <div class="progress"><span>$1,000,000</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-landing-zone">
+                    <div class="examples-right-landing">
+                        <img src="/Logo2.png">
+                        <span>X</span>
+                        <img src="/ID-LOGO2.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard nodisplay" id="dashboard">
+                <div class="left-side-dashboard">
+                    <div class="left-side-title">
+                        <span>My Investments</span>
+                    </div>
+                    <div class="stocks">
+                        <div class="stock-card">
+                            <div class="stock-content-left">
+                                <img src="./Logo2.png">
+                                <span>Axol Towers</span>
+                            </div>
+                            <div class="stock-content-right">
+                                <span>15,000</span>
+                                <div>
+                                    <i class='bx bxs-up-arrow icon'></i>
+                                    <span>+10.685%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stock-card">
+                            <div class="stock-content-left">
+                                <img src="./dragon casino.png">
+                                <span>Casino</span>
+                            </div>
+                            <div class="stock-content-right">
+                                <span>8,000</span>
+                                <div>
+                                    <i class='bx bxs-up-arrow icon'></i>
+                                    <span>+4.206%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stock-card"></div>
+                    </div>
+                    <div class="get-blazed">
+                        <div class="blazed-title">
+                            <span>EXCHANGE</span>
+                        </div>
+                        <button class="cssbuttons-io-button" onclick="exchange()">$BLAZED
+                            <div class="icon">
+                                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                        fill="currentColor"></path>
+                                </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="right-side-dashboard">
+                    <div class="right-side-title">
+                        <span>Investments Performance</span>
+                    </div>
+                    <div class="investments-chart">
+                        <div class="chart1">
+                            <canvas id="myChart"></canvas>
+                            <script>
+                                const ctx = document.getElementById("myChart").getContext("2d");
+                                const myChart = new Chart(ctx, {
+                                    type: "line",
+                                    data: {
+                                        labels: ["September", "October", "November", "December", "January", "February"],
+                                        datasets: [
+                                            {
+                                                label: "Dividends",
+                                                data: [17900, 24120, 19500, 24000, 37000, 40254.15, 50000],
+                                                backgroundColor: ["#703EFF"],
+                                                borderColor: ["#703EFF"],
+                                                borderWidth: 4,
+                                            },
+                                            {
+                                                label: "Casino LP",
+                                                data: [25000, 28750, 19500, 24000, 37000, 40254.15, 50000],
+                                                backgroundColor: ["#CEC044"],
+                                                borderColor: ["#CEC044"],
+                                                borderWidth: 4,
+                                            },
+                                            {
+                                                label: "$BLAZE LP",
+                                                data: [15000, 17250, 19837.5, 22813.12, 26235.08, 30170.34, 34695.89],
+                                                backgroundColor: ["#CE4444"],
+                                                borderColor: ["#CE4444"],
+                                                borderWidth: 4,
+                                            },
+                                        ],
+                                    },
+                                    options: {},
+                                });
+                            </script>
+                        </div>
+                        <div class="chart2">
+                            <canvas id="myChart2"></canvas>
+                            <script>
+                                const xtc = document.getElementById("myChart2").getContext("2d");
+                                const myChart2 = new Chart(xtc, {
+                                    type: "line",
+                                    data: {
+                                        labels: ["June", "July", "August", "September", "October", "November"],
+                                        datasets: [
+                                            {
+                                                label: "Dispensaries Revenue",
+                                                data: [48000, 54000, 57000, 61000, 70000, 76156.5, 50000],
+                                                backgroundColor: ["#44CE6B"],
+                                                borderColor: ["#44CE6B"],
+                                                borderWidth: 4,
+                                            },
+                                        ],
+                                    },
+                                    options: {},
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="last-transactions">
+                        <div class="last-transactions-title">
+                            <span>Last Transactions</span>
+                        </div>
+                        <div class="transactions-container">
+                            <div class="transaction-card">
+                                <img src="./Logo2.png">
+                                <div class="first-data">
+                                    <span>Axol Towers</span>
+                                    <span>Invested</span>
+                                </div>
+                                <div class="second-data">
+                                    <span>Expected dividends:</span>
+                                    <span>20%</span>
+                                </div>
+                                <div class="third-data">
+                                    <div>
+                                        <i class='bx bx-minus icon'></i>
+                                        <span>15,000</span>
+                                    </div>
+                                    <span>28 Aug, 22</span>
+                                </div>
+                            </div>
+                            <div class="transaction-card">
+                                <img src="./BLAZE.png">
+                                <div class="first-data">
+                                    <span>$BLAZED</span>
+                                    <span>Acquisition</span>
+                                </div>
+                                <div class="second-data">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="third-data">
+                                    <div>
+                                        <i class='bx bx-plus icon'></i>
+                                        <span>15,000</span>
+                                    </div>
+                                    <span>26 Aug, 22</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roadmap" id="roadmap">
+
+                <div class="roadmap-header">
+                    <div class="roadmap-h-leftside">
+                        <div>
+                            <span><strong>Wednesday</strong>, 07 September</span>
+                            <span>Road Map 2022</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-h-rightside">
+                        <div class="">
+                            <img src="./Chris1.png">
+                            <img src="./cryptodad1.png">
+                            <img src="./Fred.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-center">
+                    <div class="rm-center-background">
+                        <div class="first-section">
+                            <div class="rm-section">
+                                <i class='bx bxs-terminal icon'></i>
+                                <span>Development</span>
+                            </div>
+                            <div class="rm-goals">
+                                <div class="goal-test">
+                                    <span>Casino</span>
+                                    <div class="goal-done">
+                                        <i class='bx bx-check-circle icon'></i>
+                                        <span>18/22</span>
+                                    </div>
+                                </div>
+                                <div class="goal-mini">
+                                    <span>Testing Transaction Recognition</span>
+                                </div>
+                            </div>
+                            <div class="rm-background-first-row">
+                                <div class="row-lines"></div>
+                                <div class="row-lines"><span>1</span></div>
+                                <div class="row-lines"><span>2</span></div>
+                                <div class="row-lines"><span>3</span></div>
+                                <div class="row-lines"><span>4</span></div>
+                                <div class="row-lines"><span>5</span></div>
+                                <div class="row-lines"><span>6</span></div>
+                                <div class="row-lines"><span>7</span></div>
+                                <div class="row-lines"><span>8</span></div>
+                                <div class="row-lines"><span>9</span></div>
+                                <div class="row-lines"><span>10</span></div>
+                                <div class="row-lines"><span>11</span></div>
+                                <div class="row-lines"><span>12</span></div>
+                                <div class="row-lines"><span>13</span></div>
+                                <div class="row-lines"><span>14</span></div>
+                                <div class="row-lines"><span>15</span></div>
+                                <div class="row-lines"><span>16</span></div>
+                                <div class="row-lines"><span>17</span></div>
+                                <div class="row-lines"><span>18</span></div>
+                                <div class="row-lines"><span>19</span></div>
+                                <div class="row-lines"><span>20</span></div>
+                                <div class="row-lines"><span>21</span></div>
+                                <div class="row-lines"><span>22</span></div>
+                                <div class="row-lines"><span>23</span></div>
+                                <div class="row-lines"><span>24</span></div>
+                                <div class="row-lines"><span>25</span></div>
+                                <div class="row-lines"><span>26</span></div>
+                                <div class="row-lines"><span>27</span></div>
+                                <div class="row-lines"><span>28</span></div>
+                                <div class="row-lines"><span>29</span></div>
+                                <div class="row-lines"><span>30</span></div>
+                                <div class="row-lines"><span></span></div>
+                            </div>
+                        </div>
+                        <div class="rm-bacckground-first-mid-row">
+                            <div class="mid-row"></div>
+                        </div>
+                        <div class="second-section">
+                            <div class="rm-section">
+                                <i class='bx bxs-leaf icon'></i>
+                                <span>Warehouse & <br>Dispensaries</span>
+                            </div>
+                            <div class="rm-goals">
+                                <div class="goal-test">
+                                    <span>Government Visit</span>
+                                    <div class="goal-done">
+                                        <i class='bx bx-check-circle icon'></i>
+                                        <span> 1/2</span>
+                                    </div>
+                                </div>
+                                <div class="goal-test">
+                                    <span>Edibles Meeting</span>
+                                    <div class="goal-done">
+                                        <i class='bx bx-check-circle icon'></i>
+                                        <span> 0/1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rm-background-second-row">
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                            </div>
+                        </div>
+                        <div class="rm-bacckground-second-mid-row">
+                            <div class="mid-row"></div>
+                        </div>
+                        <div class="third-section">
+                            <div class="rm-section">
+                                <i class='bx bxs-pen icon'></i>
+                                <span>Collaborations</span>
+                            </div>
+                            <div class="rm-goals">
+                                <div class="goal-test">
+                                    <span>Axol Towers</span>
+                                    <div class="goal-done">
+                                        <i class='bx bx-check-circle icon'></i>
+                                        <span> 2/3</span>
+                                    </div>
+                                </div>
+                                <div class="goal-test">
+                                    <span>Not Bored Apes</span>
+                                    <div class="goal-done">
+                                        <img src="./NBA.png"> 
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rm-background-third-row">
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                                <div class="row-lines"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="ax-info" id="ax-info">
+                <div class="ax-left-zone">
+                    <div class="ex-left-title">
+                        <span>What does <strong>Axol Towers</strong> do for us?</span>
+                    </div>
+                    <div class="ex-left-title-description">
+                        <span class="first"><strong></strong> Guarantees you <strong>15%</strong> dividends on your
+                            investment.</span>
+                        <div class="axol-how">
+                            <span>How is that possible?</span>
+                            <span>Using the money they collect from crowdfunding to build houses, condos and buildings.
+                                <br><br> When the pre-sale time ends, users who invest through Web3 will obtain their
+                                profits in <strong>$BLAZED</strong> or <strong>$SOLANA</strong>, whichever is their
+                                preference.</span>
+
+                            <br><br><span>What do they get for doing this?</span>
+                            <span>They get 23% of dividends after successfully funding a project for external clients,
+                                when they are the ones who are gonna build something they get 77% of the revenue from
+                                pre-sales. <strong>Look EG here!</strong>
+                            </span>
+
+                            <br><br><span>Whale tiers gives you extra percentage of dividends:</span>
+                        </div>
+                        <div class="whales">
+                            <strong>Little Whale +1%</strong> <strong> Whale +2%</strong> <strong>Big Whale +3%</strong>
+                            <strong> Giant Whale +4%</strong> <strong> The Whale +5%</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ax-right-zone">
+                    <div class="real-estate-card">
+                        <div class="card-image">
+                            <img src="./building.jpg">
+                        </div>
+                        <div class="card-info">
+                            <div class="info-title">
+                                <span>Participate in this project</span>
+                            </div>
+                            <div class="title-description">
+                                <span>Select amount of <strong>$BLAZED</strong> you want to invest on this
+                                    building.</span>
+                            </div>
+                            <div class="card-amount">
+                                <div class="inv">
+                                    <span id="invest" placeholder="1,000" type="number"></span>
+                                    <span class="text">Investment</span>
+                                </div>
+                                <div class="pro">
+                                    <span id="profit">0</span>
+                                    <span class="text">Profit</span>
+                                </div>
+                            </div>
+                            <div class="amount-bar">
+                                <div class="numbers">
+                                    <span id="investment">100</span>
+                                    <span>200,000</span>
+                                </div>
+                                <div class="bar">
+                                    <input type="range" min="100" step="100" max="200000" value="1" class="slider"
+                                        id="selection">
+                                    <script>
+                                        var slider = document.getElementById("selection");
+                                        var output = document.getElementById("invest");
+                                        var profit = document.getElementById("profit");
+                                        var tier1 = document.getElementById("tier1");
+
+                                        output.innerHTML = slider.value; // Display the default slider value
+                                        // Update the current slider value (each time you drag the slider handle)
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="tiers">
+                                <div class="tier active" id="tier1">
+                                    <div class="tier-title">Tier 1</div>
+                                    <div>
+                                        <div>
+                                            <span>10,000 $BLAZED</span>
+                                        </div>
+                                        <div>
+                                            <span class="currently">08/30/22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tier active" id="tier2">
+                                    <div class="tier-title">Tier 2</div>
+                                    <div>
+                                        <div>
+                                            <span>25,000 $BLAZED</span>
+                                        </div>
+                                        <div>
+                                            <span class="currently">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tier active" id="tier3">
+                                    <div class="tier-title">Tier 3</div>
+                                    <div>
+                                        <div>
+                                            <span>50,000 $BLAZED</span>
+                                        </div>
+                                        <div>
+                                            <span class="currently">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tier active" id="tier4">
+                                    <div class="tier-title">Tier 4</div>
+                                    <div>
+                                        <div>
+                                            <span>100,000 $BLAZED</span>
+                                        </div>
+                                        <div>
+                                            <span class="currently">Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-buttons">
+                                <button>Information</button>
+                                <button onclick="signInTransactionAndSendMoney()">Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe src="https://my.atlistmaps.com/map/6c6274a0-841c-4cfe-8e58-f6e7e5c4b854?share=true"
+                    allow="geolocation" width="80%" height="80%" frameborder="0" scrolling="no"
+                    allowfullscreen></iframe>
+            </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/new.js"></script>
+    </div>
+
+    <div class="verification on">
+        <div class="verify-card">
+            <div>
+                <span>HOLDERS ONLY!</span>
+            </div>
+            <div class="verify-image">
+                <img src="cryptodad2.png" class="cd">
+            </div>
+            <div></div>
+            <div></div>
+            <div class="phantom-wallet">
+                <span onclick="phantom_connect()">Connect Wallet</span>
+                <img src="./phantom-logo.png">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>
