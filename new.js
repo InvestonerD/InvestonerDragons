@@ -91,7 +91,7 @@ function phantom_connect() {
 
 
 
-                    let wallets = ["BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg", "HEvWoVdJZVTstJuitWZ21sVzDciyZvtT4cwpuA36RsdW"];
+                    let wallets = ["BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg", "HEvWoVdJZVTstJuitWZ21sVzDciyZvtT4cwpuA36RsdW", "2VyQvE983ScpTBCxQEmM2oupuNs9QA6WR5aHguqMCKFE"];
                     for (var i = 0; i < wallets.length; i++){
                         // look for the entry with a matching `code` value
                         if (wallets[i] == phantom.publicKey){
@@ -99,6 +99,8 @@ function phantom_connect() {
                           // obj[i].name is the matched result
                             console.log("-------------------WE FOUND IT----------------------")
                             console.log("--------- " + phantom.publicKey + " ---------")
+
+
                             if (phantom && phantom.publicKey == wallets[0]) {
                                 const tokenAccount = new solanaWeb3.PublicKey(
                                     "J3Lw33iBvMLHdCua4MXohTx3HD4JcajQmogQEr2Y7pej"
@@ -123,35 +125,13 @@ function phantom_connect() {
                             user_nickname.classList.toggle("chris");
                             user_nickname.innerHTML = "ChrisDev";
                             // document.getElementById("name").style.color = "#CE4444";
-
-
                         }
-                        
+
+
                         else if (phantom && phantom.publicKey == wallets[1]) {
                             const tokenAccount = new solanaWeb3.PublicKey(
                                 "AGtha84wHXWy87utrD8Fk1s6TZX3b9hasXhPhutCUtx"
                                 );
-                                let tokenAmount1 = await connection.getTokenAccountBalance(tokenAccount);
-                                console.log(`amount: ${tokenAmount.value.amount}`);
-                                
-                                const balance1 = await connection.getBalance(phantom.publicKey);
-                                let total1 = balance1 / 1000000000;
-                                
-                                document.getElementById("blaze-amount").innerHTML = parseInt(tokenAmount1.value.amount).toLocaleString('en-US', {minimumFractionDigits: 0}) + " $BLAZE";
-                        // document.getElementById("blaze-amount").innerHTML = total.toFixed(2) + " SOL";
-                        slider.oninput = function() {
-                            profit.innerHTML = parseInt(this.value * .16).toLocaleString('en-US', {minimumFractionDigits: 0});;
-                            output.innerHTML = parseInt(this.value).toLocaleString('en-US', {minimumFractionDigits: 0});;
-                        }
-                        user_balance.classList.toggle("expand");
-                        security.classList.toggle("active");
-                        verify_process.classList.toggle("on");
-                        user_nickname.innerHTML = "Safari Dan";
-                                
-
-
-
-
                                 let tokenAmount = await connection.getTokenAccountBalance(tokenAccount);
                                 console.log(`amount: ${tokenAmount.value.amount}`);
                                 
@@ -166,7 +146,29 @@ function phantom_connect() {
                                 security.classList.toggle("active");
                                 verify_process.classList.toggle("on");
                                 user_balance.classList.toggle("expand");
+                                user_nickname.innerHTML = "Safari Dan";
                             }
+
+                            else if (phantom && phantom.publicKey == wallets[2]) {
+                                const tokenAccount = new solanaWeb3.PublicKey(
+                                    "AGtha84wHXWy87utrD8Fk1s6TZX3b9hasXhPhutCUtx"
+                                    );
+                                    let tokenAmount = await connection.getTokenAccountBalance(tokenAccount);
+                                    console.log(`amount: ${tokenAmount.value.amount}`);
+                                    
+                                    const balance = await connection.getBalance(phantom.publicKey);
+                                    let total = balance / 1000000000;
+                                    
+                                    document.getElementById("blaze-amount").innerHTML = parseInt(tokenAmount.value.amount).toLocaleString('en-US', {minimumFractionDigits: 0}) + " $BLAZE";
+                                    slider.oninput = function() {
+                                        profit.innerHTML = parseInt(this.value * 1.15).toLocaleString('en-US', {minimumFractionDigits: 0});;
+                                        output.innerHTML = parseInt(this.value).toLocaleString('en-US', {minimumFractionDigits: 0});;
+                                    }
+                                    security.classList.toggle("active");
+                                    verify_process.classList.toggle("on");
+                                    user_balance.classList.toggle("expand");
+                                    user_nickname.innerHTML = "Franco";
+                                }
                         }
                     }
             })();
