@@ -12,9 +12,8 @@
     <link href="./bahnschrift.ttf">
     <link rel="icon" href="./logo.svg">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <script src="./phantom.js"></script>
     <script type="module" src="./spl.js"></script>
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="./solanaWeb3.browser.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -46,7 +45,7 @@
             <div class="user-profile">
                 <div class="user_image chris">
                     <img src="./logo800.svg">
-                    <img src="./Chris1.png">
+                    <img src="./Fred.png">
                 </div>
                 <div class="username">
                     <span class="user-nickname" id="name"></span>
@@ -70,7 +69,7 @@
                             </a>
                         </li>
                         <li class="nav-link">
-                            <a class="casino">
+                            <a class="casino" onclick="document.getElementById('casino').scrollIntoView();">
                                 <i class='bx bx-color icon'></i>
                                 <span class="text nav-text">Casino</span>
                             </a>
@@ -185,7 +184,82 @@
                 </div>
             </div>
 
-            <div class="dashboard nodisplay" id="dashboard">
+            <div class="dashboard nodisplay responsive" id="dashboard">
+                <div class="phone">
+                    <div class="chart3">
+                        <canvas id="myChart3"></canvas>
+                        <script>
+                            const ctx3 = document.getElementById("myChart3").getContext("2d");
+                            Chart.defaults.font.size = 25;
+                            const myChart3 = new Chart(ctx3, {
+                                type: "doughnut",
+                                data: {
+                                    labels: ["Dividends", "Casino LP", "$BLAZE LP"],
+                                    datasets: [
+                                        {
+                                            label: "Dividends",
+                                            data: [15000, 17900, 25000],
+                                            backgroundColor: ["#703EFF", "#CEC044", "#CE4444"],
+                                            borderColor: ["#0A0A0B"],
+                                            borderWidth: 10,
+                                            borderRadius: 20,
+                                            cutout: "90%",
+                                            offset: 10,
+                                        },
+                                    ],
+                                },
+                                options: {
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                                font: {
+                                                    size: 25
+                                                }
+                                            },
+                                            display: true,
+                                            data: 25
+                                        }
+                                    }
+                                },
+                            });
+                        </script>
+                    </div>
+                    <div class="down-investments">
+                        <div class="down-title">
+                            <span>My Investments</span>
+                        </div>
+                        <div class="stocks">
+                            <div class="stock-card">
+                                <div class="stock-content-left">
+                                    <img src="./Logo2.png">
+                                    <span>Axol Towers</span>
+                                </div>
+                                <div class="stock-content-right">
+                                    <span>15,000</span>
+                                    <div>
+                                        <i class='bx bxs-up-arrow icon'></i>
+                                        <span>+10.685%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stock-card">
+                                <div class="stock-content-left">
+                                    <img src="./dragon casino.png">
+                                    <span>Casino</span>
+                                </div>
+                                <div class="stock-content-right">
+                                    <span>8,000</span>
+                                    <div>
+                                        <i class='bx bxs-up-arrow icon'></i>
+                                        <span>+4.206%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stock-card"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="left-side-dashboard">
                     <div class="left-side-title">
                         <span>My Investments</span>
@@ -239,7 +313,7 @@
                         <span>Investments Performance</span>
                     </div>
                     <div class="investments-chart">
-                        <div class="chart1">
+                        <div class="chart1" style="position: relative;">
                             <canvas id="myChart"></canvas>
                             <script>
                                 const ctx = document.getElementById("myChart").getContext("2d");
@@ -271,29 +345,8 @@
                                             },
                                         ],
                                     },
-                                    options: {},
-                                });
-                            </script>
-                        </div>
-                        <div class="chart2">
-                            <canvas id="myChart2"></canvas>
-                            <script>
-                                const xtc = document.getElementById("myChart2").getContext("2d");
-                                const myChart2 = new Chart(xtc, {
-                                    type: "line",
-                                    data: {
-                                        labels: ["June", "July", "August", "September", "October", "November"],
-                                        datasets: [
-                                            {
-                                                label: "Dispensaries Revenue",
-                                                data: [48000, 54000, 57000, 61000, 70000, 76156.5, 50000],
-                                                backgroundColor: ["#44CE6B"],
-                                                borderColor: ["#44CE6B"],
-                                                borderWidth: 4,
-                                            },
-                                        ],
+                                    options: {
                                     },
-                                    options: {},
                                 });
                             </script>
                         </div>
@@ -349,7 +402,7 @@
                 <div class="roadmap-header">
                     <div class="roadmap-h-leftside">
                         <div>
-                            <span><strong>Friday</strong>, 09 September</span>
+                            <span><strong>Saturday</strong>, 17 September</span>
                             <span>Road Map 2022</span>
                         </div>
                     </div>
@@ -494,7 +547,7 @@
                                 <div class="goal-test">
                                     <span>Not Bored Apes</span>
                                     <div class="goal-done">
-                                        <img src="./NBA.png"> 
+                                        <img src="./NBA.png">
                                         <span></span>
                                     </div>
                                 </div>
@@ -665,10 +718,52 @@
                 </div>
             </div>
 
-            <div class="map">
+            <!-- <div class="map">
                 <iframe src="https://my.atlistmaps.com/map/6c6274a0-841c-4cfe-8e58-f6e7e5c4b854?share=true"
                     allow="geolocation" width="80%" height="80%" frameborder="0" scrolling="no"
                     allowfullscreen></iframe>
+            </div> -->
+
+            <div class="casino-zone" id="casino">
+                <div class="casino">
+                    <div class="casino-title">
+                        <span class="gold">Coin Flip</span>
+                    </div>
+                    <div class="casino-description">
+                        <span>Choose your bet and flip the coin.</span>
+                    </div>
+                    <div class="coin-flipping">
+                        <div class="coin">
+                            <div class="heads">
+                                <img src="./BLAZE-COIN.png">
+                            </div>
+
+                            <div class="tails">
+                                <img src="./BLAZED.png">
+                            </div>
+                            <span id="user-option"></span>
+                        </div>
+                        <div class="bet-buttons">
+                            <span class="gold">Bet Amount</span>
+                            <div class="money">
+                                <button class="money-btn" id="dotfivesol">.05 SOL</button>
+                                <button class="money-btn" id="dottensol">.1 SOL</button>
+                                <button class="money-btn" id="dottwentyfivesol">.25 SOL</button>
+                                <button class="money-btn" id="dotfifthysol">.50 SOL</button>
+                                <button class="money-btn" id="onesol">1 SOL</button>
+                            </div>
+                            <span class="gold">Choose a coin side</span>
+                            <div class="btns">
+                                <button id="heads">Heads</button>
+                                <button id="tails">Tails</button>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <script src="./new.js"></script>
+                            <button id="flip-button" onclick="signInTransactionAndSendMoney()">Flip Coin</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
