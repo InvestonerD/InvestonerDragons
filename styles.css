@@ -2272,7 +2272,50 @@ body::-webkit-scrollbar {
     color: #0A0A0B;
 }
 
+.flip-button.hidden {
+    display: block;
+}
+
+.flip-button {
+    display: none;
+}
+
+.flipbutton.hidden {
+    display: none;
+}
+
+.flipbutton {
+    display: block;
+}
+
+.bet-buttons {
+    display: flex;
+}
+
+.bet-buttons.hidden {
+    display: none;
+}
+
+#flip-button {
+    background-color: #4E44CE;
+    border: 1px #4E44CE solid;
+}
+
 #flip-button:disabled{
+    background-color: #121212;
+    color: #252525;
+    border: 1px #CE4444 solid;
+    color: #CE4444;
+}
+
+#now-button:disabled {
+    background-color: #121212;
+    color: #252525;
+    border: 1px #CE4444 solid;
+    color: #CE4444;
+}
+
+#money-status:disabled {
     background-color: #121212;
     color: #252525;
     border: 1px #CE4444 solid;
@@ -2341,8 +2384,22 @@ body::-webkit-scrollbar {
 }
 
 #user-option{
-    color: transparent;
+    color: red;
     padding-left: 5vw;
+}
+
+#user-coin {
+    color: red;
+    padding-left: 5vw;
+}
+
+#money-status {
+    color: red;
+    padding-left: 5vw;
+}
+
+#nowbutton {
+    border: 1px red solid;
 }
 
 

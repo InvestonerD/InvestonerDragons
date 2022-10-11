@@ -16,6 +16,11 @@ verify_process = document.querySelector(".verification");
 user_image = document.querySelector(".user_image");
 user_nickname = document.querySelector(".user-nickname");
 whale = document.querySelector(".whale-tier");
+user_coin = document.getElementById("user-coin");
+heads = document.getElementById("heads");
+tails = document.getElementById("tails");
+mny_status = document.getElementById("money-status");
+btnsbetting = document.querySelector(".bet-buttons");
 
 toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
@@ -76,11 +81,12 @@ function phantom_connect() {
                 var wallet_address = phantom.publicKey.toString();
                 console.log("Solana Wallet Address: " + wallet_address);
                 var first = wallet_address.substring(0, 5);
-                document.getElementById("wallet-address").innerHTML = first + "...";
+                var last = wallet_address.substring(38, 43);
+                document.getElementById("wallet-address").innerHTML = first + "..." + last;
 
                 (async () => {
                     const connection = new solanaWeb3.Connection(
-                        solanaWeb3.clusterApiUrl("mainnet-beta"),
+                        ["https://flashy-blissful-emerald.solana-mainnet.discover.quiknode.pro/5fa5cacd9e4a581e727c0bc7fa844c452f0c30cb/"],
                         "confirmed"
                     );
 
@@ -103,22 +109,51 @@ function phantom_connect() {
                             console.log("--------- " + phantom.publicKey + " ---------");
 
                             if (phantom && phantom.publicKey == wallets[0]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "2s5M2Dfy1XStR1QcTcxm9mrmPZp7vGfswoZfsRgSNnSb"
+                                const tokenAccounts = await connection.getTokenAccountsByOwner(
+                                    phantom.publicKey,
+                                    {
+                                        programId: new solanaWeb3.PublicKey(
+                                            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+                                        ),
+                                    }
                                 );
 
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+                                for (let account of tokenAccounts.value) {
+                                    const token = await connection.getParsedAccountInfo(
+                                        account.pubkey
+                                    );
+                                    const tokenInfo = token.value.data.parsed.info;
+                                    console.log(
+                                        tokenInfo.mint + " " + tokenInfo.tokenAmount.uiAmountString
+                                    );
+                                    // if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
+                                    //     document.getElementById("blaze_balance").innerHTML = parseInt(tokenInfo.tokenAmount.uiAmountString).toLocaleString("en-US", {
+                                    //         currency: "USD",
+                                    //         minimumFractionDigits: 2,
+                                    //     });
+                                    // }
+                                    // if (tokenInfo.mint == "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v") {
+                                    //     document.getElementById("usdc_balance").innerHTML = parseInt(tokenInfo.tokenAmount.uiAmountString).toLocaleString("en-US", {
+                                    //         currency: "USD",
+                                    //         minimumFractionDigits: 2,
+                                    //     });
+                                    // }
+                                    if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
+                                        let blaze_balance = parseInt(tokenInfo.tokenAmount.uiAmountString);
+                                        document.getElementById("blaze-amount").innerHTML =
+                                            blaze_balance.toLocaleString("en-US", {
+                                                minimumFractionDigits: 0,
+                                            }) + " $BLAZE";
+                                    }
+                                }
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
-                                document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
+                                // document.getElementById("blaze-amount").innerHTML =
+                                //     parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
+                                //         minimumFractionDigits: 0,
+                                //     }) + " $BLAZE";
                                 // document.getElementById("blaze-amount").innerHTML = total.toFixed(2) + " SOL";
                                 slider.oninput = function () {
                                     profit.innerHTML = parseInt(this.value * 0.2).toLocaleString(
@@ -138,155 +173,55 @@ function phantom_connect() {
                                 user_nickname.innerHTML = "ChrisDev";
                                 // document.getElementById("name").style.color = "#CE4444";
 
-                                let coin = document.querySelector(".coin");
-                                let flipBtn = document.querySelector("#flip-button");
-                                let resetBtn = document.querySelector("#reset-button");
-                                let centsol = (document.getElementById("dotfivesol").onclick =
-                                    function () {
-                                        document.getElementById("user-option").innerHTML = 0.05;
-                                        let user_decision =
-                                            document.getElementById("user-option").innerHTML;
-                                        console.log(user_decision);
-                                    });
-                                let centsol2 = (document.getElementById("dottensol").onclick =
-                                    function () {
-                                        document.getElementById("user-option").innerHTML = 0.1;
-                                        let user_decision =
-                                            document.getElementById("user-option").innerHTML;
-                                        console.log(user_decision);
-                                    });
-                                let centsol3 = (document.getElementById(
-                                    "dottwentyfivesol"
-                                ).onclick = function () {
-                                    document.getElementById("user-option").innerHTML = 0.25;
-                                    let user_decision =
-                                        document.getElementById("user-option").innerHTML;
-                                    console.log(user_decision);
-                                });
-                                let centsol4 = (document.getElementById(
-                                    "dotfifthysol"
-                                ).onclick = function () {
-                                    document.getElementById("user-option").innerHTML = 0.5;
-                                    let user_decision =
-                                        document.getElementById("user-option").innerHTML;
-                                    console.log(user_decision);
-                                });
-                                let centsol5 = (document.getElementById("onesol").onclick =
-                                    function () {
-                                        document.getElementById("user-option").innerHTML = 1;
-                                        let user_decision =
-                                            document.getElementById("user-option").innerHTML;
-                                        console.log(user_decision);
-                                    });
 
-                                let heads = 0;
-                                let tails = 0;
-
-                                flipBtn.addEventListener("click", () => {
-                                    let i = Math.floor(Math.random() * 2);
-                                    coin.style.animation = "none";
-                                    console.log(i);
-                                    if (i) {
-                                        setTimeout(function () {
-                                            coin.style.animation = "spin-heads 1s forwards";
-                                        }, 100);
-                                    } else {
-                                        setTimeout(function () {
-                                            coin.style.animation = "spin-tails 1s forwards";
-                                        }, 100);
-                                    }
-                                    disableButton();
-                                });
-
-                                function disableButton() {
-                                    flipBtn.disabled = true;
-                                    setTimeout(function () {
-                                        flipBtn.disabled = false;
-                                    }, 1200);
-                                }
-
-                                resetBtn.addEventListener("click", () => {
-                                    coin.style.animation = "none";
-                                    heads = 0;
-                                    tails = 0;
-                                    updateStats();
-                                });
                             } else if (phantom && phantom.publicKey == wallets[1]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "AGtha84wHXWy87utrD8Fk1s6TZX3b9hasXhPhutCUtx"
-                                );
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
                                 document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
-                                slider.oninput = function () {
-                                    profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
-                                    );
-                                    output.innerHTML = parseInt(this.value).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
-                                    );
-                                };
+                                    slider.oninput = function () {
+                                        profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
+                                            "en-US",
+                                            { minimumFractionDigits: 0 }
+                                        );
+                                        output.innerHTML = parseInt(this.value).toLocaleString(
+                                            "en-US",
+                                            { minimumFractionDigits: 0 }
+                                        );
+                                    };
                                 security.classList.toggle("active");
                                 verify_process.classList.toggle("on");
                                 user_balance.classList.toggle("expand");
                                 user_nickname.innerHTML = "Safari Dan";
                             } else if (phantom && phantom.publicKey == wallets[2]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "AGtha84wHXWy87utrD8Fk1s6TZX3b9hasXhPhutCUtx"
-                                );
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
                                 document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
-                                slider.oninput = function () {
-                                    profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
-                                    );
-                                    output.innerHTML = parseInt(this.value).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
-                                    );
-                                };
+                                    slider.oninput = function () {
+                                        profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
+                                            "en-US",
+                                            { minimumFractionDigits: 0 }
+                                        );
+                                        output.innerHTML = parseInt(this.value).toLocaleString(
+                                            "en-US",
+                                            { minimumFractionDigits: 0 }
+                                        );
+                                    };
                                 security.classList.toggle("active");
                                 verify_process.classList.toggle("on");
                                 user_balance.classList.toggle("expand");
                                 user_nickname.innerHTML = "Franco";
                             } else if (phantom && phantom.publicKey == wallets[3]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "2s5M2Dfy1XStR1QcTcxm9mrmPZp7vGfswoZfsRgSNnSb"
-                                );
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
-                                document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
                                 slider.oninput = function () {
                                     profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
                                         "en-US",
@@ -305,21 +240,11 @@ function phantom_connect() {
                                 user_nickname.innerHTML = "FredTGA";
 
                             } else if (phantom && phantom.publicKey == wallets[4]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "E4wrXcRHtBqH1VeAuxzJpRgMNQPQEvW51ySYmnAPCoCi"
-                                );
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
-                                document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
                                 slider.oninput = function () {
                                     profit.innerHTML = parseInt(this.value * 1.2).toLocaleString(
                                         "en-US",
@@ -335,21 +260,11 @@ function phantom_connect() {
                                 user_balance.classList.toggle("expand");
                                 user_nickname.innerHTML = "King6";
                             } else if (phantom && phantom.publicKey == wallets[5]) {
-                                const tokenAccount = new solanaWeb3.PublicKey(
-                                    "CxJdbPQpQKTyV6Lsmy7sCepoRTesKHA9qQi6PX4ecBWf"
-                                );
-                                let tokenAmount = await connection.getTokenAccountBalance(
-                                    tokenAccount
-                                );
-                                console.log(`amount: ${tokenAmount.value.amount}`);
+
 
                                 const balance = await connection.getBalance(phantom.publicKey);
                                 let total = balance / 1000000000;
 
-                                document.getElementById("blaze-amount").innerHTML =
-                                    parseInt(tokenAmount.value.amount).toLocaleString("en-US", {
-                                        minimumFractionDigits: 0,
-                                    }) + " $BLAZE";
                                 slider.oninput = function () {
                                     profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
                                         "en-US",
@@ -365,10 +280,16 @@ function phantom_connect() {
                                 user_balance.classList.toggle("expand");
                                 user_nickname.innerHTML = "Kev1493";
                             }
+
+
+
+
+
+
                         }
                     }
                 })();
-            });
+            }, { once: true });
         } catch (err) {
             console.log("Connection Cancelled!");
         }
@@ -376,76 +297,243 @@ function phantom_connect() {
 }
 
 
-function signInTransactionAndSendMoney() {
-    const wallet = "BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg";
-    (async () => {
 
-            const connection = new solanaWeb3.Connection(
-                solanaWeb3.clusterApiUrl("mainnet-beta"),
-                "confirmed"
-            );
+function signInTransactionAndSendMoney() {
+    var provider = () => {
+        if ("solana" in window) {
+            var provider = window.solana;
+            if (provider.isPhantom) {
+                return provider;
+            } else {
+                return false;
+            }
+        }
+        window.open("https://phantom.app", "_blank");
+    };
+
+    var phantom = provider();
+    let flipBtn2 = document.getElementById("flip-button");
+    flipBtn2.innerHTML = "Make Bet";
+    flipBtn2.style.backgroundColor = "#44CE6B";
+    flipBtn2.style.border = "#44CE6B";
+    btnsbetting.classList.toggle("hidden");
+    console.log("Connected to Phantom Wallet");
+
+
+    wallet = phantom.publicKey;
+
+    let coin = document.querySelector(".coin");
+    let flipBtn = document.querySelector(".flip-button");
+    let resetBtn = document.querySelector("#reset-button");
+    let now_btn = document.getElementById("now-button");
+    let centsol = (document.getElementById("dotfivesol").onclick =
+        function () {
+            document.getElementById("user-option").innerHTML = 0.05;
+            let user_decision =
+                document.getElementById("user-option").innerHTML;
+            console.log(user_decision);
+        });
+    let centsol2 = (document.getElementById("dottensol").onclick =
+        function () {
+            document.getElementById("user-option").innerHTML = 0.1;
+            let user_decision =
+                document.getElementById("user-option").innerHTML;
+            console.log(user_decision);
+        });
+    let centsol3 = (document.getElementById(
+        "dottwentyfivesol"
+    ).onclick = function () {
+        document.getElementById("user-option").innerHTML = 0.25;
+        let user_decision =
+            document.getElementById("user-option").innerHTML;
+        console.log(user_decision);
+    });
+    let centsol4 = (document.getElementById(
+        "dotfifthysol"
+    ).onclick = function () {
+        document.getElementById("user-option").innerHTML = 0.5;
+        let user_decision =
+            document.getElementById("user-option").innerHTML;
+        console.log(user_decision);
+    });
+    let centsol5 = (document.getElementById("onesol").onclick =
+        function () {
+            document.getElementById("user-option").innerHTML = 1;
+            let user_decision =
+                document.getElementById("user-option").innerHTML;
+            console.log(user_decision);
+        });
+
+    tails.addEventListener("click", () => {
+        user_coin.innerHTML = "Tails";
+        user_coin = 0;
+    });
+
+    heads.addEventListener("click", () => {
+        user_coin.innerHTML = "Heads";
+        user_coin = 1;
+    });
+
+
+    flipBtn.addEventListener("click", () => {
+        flipBtn.classList.toggle("hidden");
+        now_btn.classList.toggle("hidden");
+        async function signInTransactionAndSendMoney() {
+
+            // const network = "https://flashy-blissful-emerald.solana-mainnet.discover.quiknode.pro/5fa5cacd9e4a581e727c0bc7fa844c452f0c30cb/";
+            const network = "https://api.devnet.solana.com";
+            const connection = new solanaWeb3.Connection(network);
             const transaction = new solanaWeb3.Transaction();
             console.log(wallet);
-    
-            lamports = document.getElementById("user-option").value * 1000000000;
-    
+
+            lamports = document.getElementById("user-option").innerHTML * 1000000000;
+
             try {
                 destPubkeyStr = "BPKRJPAAAnboZGmga4nTFBpXsiywhCXWAGfUTbvkm8qZ"
-                lamports = document.getElementById("user-option").innerHTML.toString();
-    
+                // document.getElementById("now-button").style.display = "none";
+
                 console.log(lamports)
-    
+
                 console.log("starting sendMoney");
-                const destPubkey = new solanaWeb3.PublicKey(destPubkeyStr);
-    
+
                 const instruction = solanaWeb3.SystemProgram.transfer({
-                    fromPubkey: wallet,
-                    toPubkey: destPubkey,
+                    fromPubkey: phantom.publicKey,
+                    toPubkey: destPubkeyStr,
                     lamports, // about half a SOL
                 });
                 let trans = await setWalletTransaction(instruction, connection);
+
                 let signature = await signAndSendTransaction(wallet, trans, connection);
                 let result = await connection.confirmTransaction(signature, "singleGossip");
                 console.log("money sent", result);
             } catch (e) {
                 console.warn("Failed", e);
             }
-    
-    
-    })()
-    
+        };
+
         async function setWalletTransaction(
             instruction, connection
         ) {
-            
             const transaction = new solanaWeb3.Transaction();
             transaction.add(instruction);
-            transaction.feePayer = wallet;
+            transaction.feePayer = phantom.publicKey;
             let hash = await connection.getRecentBlockhash();
             console.log("blockhash", hash);
             transaction.recentBlockhash = hash.blockhash;
             return transaction;
         }
-    
+
         async function signAndSendTransaction(
             wallet,
             transaction,
             connection
         ) {
             // Sign transaction, broadcast, and confirm
-            wallet = "BM7MWtvS8JtoVF9qWugwrTB3GmkrGZDicYQQLtDa2Xmg";
             const { signature } = await window.solana.signAndSendTransaction(transaction);
             await connection.confirmTransaction(signature);
-    
-    
-            //let signedTrans = await wallet.signTransaction(transaction);
-            console.log("sign transaction");
-            //let signature = await connection.sendRawTransaction(signedTrans.serialize());
-            console.log("send raw transaction");
+
+            if (signature) {
+                console.log("Transaction successful");
+                document.getElementById("now-button").style.display = "block";
+            } else {
+                console.log("Transaction failed");
+            }
             return signature;
         }
-    
+        console.log(signInTransactionAndSendMoney());
+    });
+
+
+
+    now_btn.addEventListener("click", () => {
+        let i = Math.floor(Math.random() * 2);
+        console.log("Number was: " + i);
+        console.log("user coin: " + user_coin);
+        coin.style.animation = "none";
+        disableButton();
+
+        if (i) {
+            setTimeout(function () {
+                coin.style.animation = "spin-heads 1s forwards";
+            }, 100);
+            if (user_coin = i) {
+                async function FlipCoin() {
+
+                    // const network = "https://flashy-blissful-emerald.solana-mainnet.discover.quiknode.pro/5fa5cacd9e4a581e727c0bc7fa844c452f0c30cb/";
+                    const network = "https://api.devnet.solana.com";
+                    const connection = new solanaWeb3.Connection(network);
+                    const transaction = new solanaWeb3.Transaction();
+                    console.log(wallet);
+
+                    lamports = document.getElementById("user-option").innerHTML * 1000000000 * 2;
+
+                    try {
+                        destPubkeyStr = "BPKRJPAAAnboZGmga4nTFBpXsiywhCXWAGfUTbvkm8qZ"
+
+                        console.log(lamports)
+
+                        console.log("starting sendMoney");
+                        const senderTokenAddress = new solanaWeb3.PublicKey("BPKRJPAAAnboZGmga4nTFBpXsiywhCXWAGfUTbvkm8qZ");
+
+                        const instruction = solanaWeb3.SystemProgram.transfer({
+                            fromPubkey: senderTokenAddress,
+                            toPubkey: phantom.publicKey,
+                            signature: phantom.publicKey,
+                            lamports, // about half a SOL
+                        });
+                        let trans = await setWalletTransaction(instruction, connection);
+
+                        let signature = await signAndSendTransaction(wallet, trans, connection);
+                        let result = await connection.confirmTransaction(signature, "singleGossip");
+                        console.log("money sent", result);
+                    } catch (e) {
+                        console.warn("Failed", e);
+                    }
+                };
+
+                async function setWalletTransaction(
+                    instruction, connection
+                ) {
+                    const transaction = new solanaWeb3.Transaction();
+                    transaction.add(instruction);
+                    transaction.feePayer = phantom.publicKey;
+                    let hash = await connection.getRecentBlockhash();
+                    console.log("blockhash", hash);
+                    transaction.recentBlockhash = hash.blockhash;
+                    return transaction;
+                }
+
+                async function signAndSendTransaction(
+                    wallet,
+                    transaction,
+                    connection
+                ) {
+                    // Sign transaction, broadcast, and confirm
+                    const { signature } = await window.solana.signAndSendTransaction(transaction);
+                    await connection.confirmTransaction(signature);
+                    //let signedTrans = await wallet.signTransaction(transaction);
+                    console.log("sign transaction");
+                    //let signature = await connection.sendRawTransaction(signedTrans.serialize());
+                    console.log("send raw transaction");
+                    return signature;
+                }
+                console.log(FlipCoin());
+            }
+        } else {
+            setTimeout(function () {
+                coin.style.animation = "spin-tails 1s forwards";
+            }, 100);
+        }
+
+        flipBtn.classList.toggle("hidden");
+        disableButton();
+    });
+
+    function disableButton() {
+        now_btn.disabled = true;
+        now_btn.style.cursor = "not-allowed";
     }
+}
 
 function disconnectAccount() {
     window.solana.request({
