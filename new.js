@@ -126,18 +126,6 @@ function phantom_connect() {
                                     console.log(
                                         tokenInfo.mint + " " + tokenInfo.tokenAmount.uiAmountString
                                     );
-                                    // if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
-                                    //     document.getElementById("blaze_balance").innerHTML = parseInt(tokenInfo.tokenAmount.uiAmountString).toLocaleString("en-US", {
-                                    //         currency: "USD",
-                                    //         minimumFractionDigits: 2,
-                                    //     });
-                                    // }
-                                    // if (tokenInfo.mint == "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v") {
-                                    //     document.getElementById("usdc_balance").innerHTML = parseInt(tokenInfo.tokenAmount.uiAmountString).toLocaleString("en-US", {
-                                    //         currency: "USD",
-                                    //         minimumFractionDigits: 2,
-                                    //     });
-                                    // }
                                     if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
                                         let blaze_balance = parseInt(tokenInfo.tokenAmount.uiAmountString);
                                         document.getElementById("blaze-amount").innerHTML =
@@ -177,20 +165,31 @@ function phantom_connect() {
                             } else if (phantom && phantom.publicKey == wallets[1]) {
 
 
-                                const balance = await connection.getBalance(phantom.publicKey);
-                                let total = balance / 1000000000;
+                                const tokenAccounts = await connection.getTokenAccountsByOwner(
+                                    phantom.publicKey,
+                                    {
+                                        programId: new solanaWeb3.PublicKey(
+                                            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+                                        ),
+                                    }
+                                );
 
-                                document.getElementById("blaze-amount").innerHTML =
-                                    slider.oninput = function () {
-                                        profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
-                                            "en-US",
-                                            { minimumFractionDigits: 0 }
-                                        );
-                                        output.innerHTML = parseInt(this.value).toLocaleString(
-                                            "en-US",
-                                            { minimumFractionDigits: 0 }
-                                        );
-                                    };
+                                for (let account of tokenAccounts.value) {
+                                    const token = await connection.getParsedAccountInfo(
+                                        account.pubkey
+                                    );
+                                    const tokenInfo = token.value.data.parsed.info;
+                                    console.log(
+                                        tokenInfo.mint + " " + tokenInfo.tokenAmount.uiAmountString
+                                    );
+                                    if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
+                                        let blaze_balance = parseInt(tokenInfo.tokenAmount.uiAmountString);
+                                        document.getElementById("blaze-amount").innerHTML =
+                                            blaze_balance.toLocaleString("en-US", {
+                                                minimumFractionDigits: 0,
+                                            }) + " $BLAZE";
+                                    }
+                                }
                                 security.classList.toggle("active");
                                 verify_process.classList.toggle("on");
                                 user_balance.classList.toggle("expand");
@@ -218,20 +217,31 @@ function phantom_connect() {
                                 user_nickname.innerHTML = "Franco";
                             } else if (phantom && phantom.publicKey == wallets[3]) {
 
+                                const tokenAccounts = await connection.getTokenAccountsByOwner(
+                                    phantom.publicKey,
+                                    {
+                                        programId: new solanaWeb3.PublicKey(
+                                            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+                                        ),
+                                    }
+                                );
 
-                                const balance = await connection.getBalance(phantom.publicKey);
-                                let total = balance / 1000000000;
-
-                                slider.oninput = function () {
-                                    profit.innerHTML = parseInt(this.value * 1.15).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
+                                for (let account of tokenAccounts.value) {
+                                    const token = await connection.getParsedAccountInfo(
+                                        account.pubkey
                                     );
-                                    output.innerHTML = parseInt(this.value).toLocaleString(
-                                        "en-US",
-                                        { minimumFractionDigits: 0 }
+                                    const tokenInfo = token.value.data.parsed.info;
+                                    console.log(
+                                        tokenInfo.mint + " " + tokenInfo.tokenAmount.uiAmountString
                                     );
-                                };
+                                    if (tokenInfo.mint == "5H3EHgNgX6vCog2JQwv5LfkhTWLvcd1EP6CSMzym1QSF") {
+                                        let blaze_balance = parseInt(tokenInfo.tokenAmount.uiAmountString);
+                                        document.getElementById("blaze-amount").innerHTML =
+                                            blaze_balance.toLocaleString("en-US", {
+                                                minimumFractionDigits: 0,
+                                            }) + " $BLAZE";
+                                    }
+                                }
                                 security.classList.toggle("active");
                                 verify_process.classList.toggle("on");
                                 user_balance.classList.toggle("expand");

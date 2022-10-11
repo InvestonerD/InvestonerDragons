@@ -1034,21 +1034,15 @@ body::-webkit-scrollbar {
     margin-right: .35vw;
 }
 
-.row-lines:nth-child(18) {
+.row-lines:nth-child(11) {
     color: #44CE6B;
     border: 1px #44CE6B solid;
     font-size: 1.2vw;
 }
 
-.row-lines:nth-child(22) {
-    color: #CE4444;
-    border: 1px #CE4444 solid;
-    font-size: 1.2vw;
-}
-
-.row-lines:nth-child(29) {
-    color: #448CCE;
-    border: 1px #448CCE solid;
+.row-lines:nth-child(04) {
+    color: #703EFF;
+    border: 1px #703EFF solid;
     font-size: 1.2vw;
 }
 
@@ -1219,12 +1213,13 @@ body::-webkit-scrollbar {
 }
 
 .third-section .rm-goals .goal-test:nth-child(1) {
-    width: 100%;
+    width: 25%;
     background-color: #703EFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 3vw;
+    margin-right: 66.3%;
 }
 
 .third-section .rm-goals .goal-test:nth-child(1) span {
