@@ -400,7 +400,7 @@ function signInTransactionAndSendMoney() {
 
             try {
                 destPubkeyStr = "BPKRJPAAAnboZGmga4nTFBpXsiywhCXWAGfUTbvkm8qZ"
-                // document.getElementById("now-button").style.display = "none";
+                document.getElementById("now-button").style.display = "none";
 
                 console.log(lamports)
 
